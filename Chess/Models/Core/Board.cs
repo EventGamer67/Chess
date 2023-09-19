@@ -72,8 +72,6 @@ namespace Chess.Models.Core
                             else
                             {
                                 //Console.ForegroundColor = figureAtPoint.colorColor;
-
-                                
                                 
                                 Console.ForegroundColor = ConsoleColor.Yellow;
                             }

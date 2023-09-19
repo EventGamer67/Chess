@@ -60,6 +60,7 @@ namespace Chess.Models.Figures
             bool resLeft = true;
             Point leftRookPoint = new Point(1, this.position.y);
             Point rightRookPoint = new Point(board.width, this.position.y);
+
             if (!board.isSlotEmpty(rightRookPoint))
             {
                 Figure rookRight = board.GetFigureAtPoint(rightRookPoint);
@@ -79,7 +80,7 @@ namespace Chess.Models.Figures
                 Figure rookLeft = board.GetFigureAtPoint(leftRookPoint);
                 if (rookLeft.MoveCount == 0)
                 {
-                    for (int i = this.position.x - 1; i < rookLeft.position.x + 1; i++)
+                    for (int i = this.position.x - 1; i > rookLeft.position.x + 1; i--)
                     {
                         if (!board.isSlotEmpty(new Point(i, this.position.y)))
                         {
@@ -114,6 +115,19 @@ namespace Chess.Models.Figures
                 else
                 {
                     res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
+                    List<Point> clearPoints = new List<Point>();
+                    foreach (Point point in res)
+                    {
+                        if (!board.isSlotEmpty(point))
+                        {
+                            Figure figure = board.GetFigureAtPoint(point);
+                            if (!board.FiguresIsEnemies(figure, this))
+                            {
+                                clearPoints.Add(point);
+                            }
+                        }
+                    }
+                    res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
                 }
             }
 
@@ -121,12 +135,14 @@ namespace Chess.Models.Figures
             if (this.RookSwapAvalible().leftRook == true)
             {
                 res.Add(new Point(1, this.position.y));
+                Console.WriteLine("leftrook");
             }
             if (this.RookSwapAvalible().rightRook == true)
             {
                 res.Add(new Point(board.width, this.position.y));
+                Console.WriteLine("rightrook");
             }
-            
+
 
 
             //cleaning points
@@ -135,7 +151,7 @@ namespace Chess.Models.Figures
             colors = board.game.Players.ToList();
 
             //foreach (String color in colors) Console.WriteLine(color);
-            colors.Remove("Purple");
+            colors.Remove(this.color);
             //foreach (String color in colors) Console.WriteLine(color);
 
             foreach (String color in colors)

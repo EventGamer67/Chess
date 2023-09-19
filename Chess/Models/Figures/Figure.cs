@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Chess.Models.Movement;
+using System.Net;
 
 namespace Chess.Models.Figures
 {
@@ -44,16 +45,38 @@ namespace Chess.Models.Figures
                     {
                         //Console.WriteLine(point.getAsString());
 
-                        res.Add(point);
                         if (!board.isSlotEmpty(point))
                         {
+                            Figure figure = board.GetFigureAtPoint(point);
+                            if (board.FiguresIsEnemies(figure, this))
+                            {
+                                res.Add(point);
+                            }
                             break;
+
+                        }
+                        else
+                        {
+                            res.Add(point);
                         }
                     }
                 }
                 else
                 {
                     res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
+                    List<Point> clearPoints = new List<Point>();
+                    foreach (Point point in res)
+                    {
+                        if (!board.isSlotEmpty(point))
+                        {
+                            Figure figure = board.GetFigureAtPoint(point);
+                            if (!board.FiguresIsEnemies(figure, this))
+                            {
+                                clearPoints.Add(point);
+                            }
+                        }
+                    }
+                    res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
                 }
             }
             return res;
