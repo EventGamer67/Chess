@@ -64,30 +64,52 @@ namespace Chess.Models.Figures
             if (!board.isSlotEmpty(rightRookPoint))
             {
                 Figure rookRight = board.GetFigureAtPoint(rightRookPoint);
-                if (rookRight.MoveCount == 0)
+                if(rookRight is Rook)
                 {
-                    for (int i = this.position.x + 1; i < rookRight.position.x - 1; i++)
+                    if (rookRight.MoveCount == 0)
                     {
-                        if (!board.isSlotEmpty(new Point(i, this.position.y)))
+                        for (int i = this.position.x + 1; i < rookRight.position.x - 1; i++)
                         {
-                            resRight = false;
+                            if (!board.isSlotEmpty(new Point(i, this.position.y)))
+                            {
+                                resRight = false;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    resRight = false;
+                }
+            }
+            else
+            {
+                resRight = false;
             }
             if (!board.isSlotEmpty(leftRookPoint))
             {
                 Figure rookLeft = board.GetFigureAtPoint(leftRookPoint);
-                if (rookLeft.MoveCount == 0)
+                if(rookLeft is Rook)
                 {
-                    for (int i = this.position.x - 1; i > rookLeft.position.x + 1; i--)
+                    if (rookLeft.MoveCount == 0)
                     {
-                        if (!board.isSlotEmpty(new Point(i, this.position.y)))
+                        for (int i = this.position.x - 1; i > rookLeft.position.x + 1; i--)
                         {
-                            resLeft = false;
+                            if (!board.isSlotEmpty(new Point(i, this.position.y)))
+                            {
+                                resLeft = false;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    resLeft = false;
+                }
+            }
+            else
+            {
+                resLeft = false;
             }
             return (resLeft,resRight);
         }
@@ -142,18 +164,12 @@ namespace Chess.Models.Figures
                 res.Add(new Point(board.width, this.position.y));
                 Console.WriteLine("rightrook");
             }
-
-
-
             //cleaning points
-
             List<String> colors = new List<String>();
             colors = board.game.Players.ToList();
-
             //foreach (String color in colors) Console.WriteLine(color);
             colors.Remove(this.color);
             //foreach (String color in colors) Console.WriteLine(color);
-
             foreach (String color in colors)
             {
                 List<Point> teamPoints = board.getTeamMovePoints(color);
@@ -163,10 +179,6 @@ namespace Chess.Models.Figures
                 //res.Except(teamPoints);
 
             }
-
-
-
-
             return res;
         }
     }

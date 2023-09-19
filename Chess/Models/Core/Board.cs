@@ -82,7 +82,6 @@ namespace Chess.Models.Core
                         }
                         {
                         }
-
                         Console.Write($"[{symbolToDisplay}]");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
@@ -90,9 +89,7 @@ namespace Chess.Models.Core
                     {
                         Console.Write($"[{symbolToDisplay}]");
                     }
-
                 }
-
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }
@@ -181,43 +178,36 @@ namespace Chess.Models.Core
         {
             if (figure.pointMovable(point))
             {
-                //Console.WriteLine("1");
-
-                Move move = figure.moveSet.getMove(point, figure.position.x, figure.position.y);
-
-                //Console.WriteLine("2");
-
-                if (!(move is null) && move.requireEnemyChecking)
-                {
-                    Console.WriteLine("3");
-                    //if (move.canMoveAlongPath(this,move.getMovePoints()))
-                    //{
-                    if (isSlotEmpty(point))
-                    {
-                        return "Ok";
-                    }
-                    else
-                    {
-                        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
-                    }
-                    //}
-                    //else
-                    //{
-                    //    return "cannot move figure - other figure on the way";
-                    //}
-                }
-                else
-                {
-                    //Console.WriteLine("4");
-                    if (isSlotEmpty(point))
-                    {
-                        return "Ok";
-                    }
-                    else
-                    {
-                        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
-                    }
-                }
+                return "Ok";
+                //Move move = figure.moveSet.getMove(point, figure.position.x, figure.position.y);
+                //if (!(move is null) && move.requireEnemyChecking)
+                //{
+                //    if (isSlotEmpty(point))
+                //    {
+                //        return "Ok";
+                //    }
+                //    else
+                //    {
+                //        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
+                //    }
+                //    //}
+                //    //else
+                //    //{
+                //    //    return "cannot move figure - other figure on the way";
+                //    //}
+                //}
+                //else
+                //{
+                //    //Console.WriteLine("4");
+                //    if (isSlotEmpty(point))
+                //    {
+                //        return "Ok";
+                //    }
+                //    else
+                //    {
+                //        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
+                //    }
+                //}
             }
             else
             {
@@ -269,9 +259,29 @@ namespace Chess.Models.Core
         {
             if (!isSlotEmpty(newPosition))
             {
-                removeFigureAt(newPosition);
-                Console.Clear();
-                Console.WriteLine("FIGURE DIED");
+                Figure figureOnPositon = this.GetFigureAtPoint((Point)newPosition);
+                if (!this.FiguresIsEnemies(figureOnPositon, figure))
+                {
+                    if (figureOnPositon is Rook)
+                    {
+                        //right swap
+                        if (figureOnPositon.position.x > figure.position.x)
+                        {
+                            newPosition = new Point(figure.position.x + 2, figure.position.y);
+                            this.MoveFigure(figureOnPositon, new Point(figure.position.x + 1,figure.position.y));
+                        }
+                        //left swap
+                        else
+                        {
+                            newPosition = new Point(figure.position.x - 2, figure.position.y);
+                            this.MoveFigure(figureOnPositon, new Point(figure.position.x - 1, figure.position.y));
+                        }
+                    }
+                }
+                else
+                {
+                    removeFigureAt(newPosition);
+                }
             }
             figure.setPosition(newPosition);
             figure.onFigureMoved();

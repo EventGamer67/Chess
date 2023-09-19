@@ -148,6 +148,7 @@ namespace Chess.Models.Core
                     {
                         currentPlayerIndex = 0;
                     }
+                    Console.Clear();
                 }
                 else
                 {
