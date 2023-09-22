@@ -6,11 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Chess.Models.Movement;
 using System.Collections;
+using System.ComponentModel;
+using System.CodeDom;
 
 namespace Chess.Models.Figures
 {
     class Pawn : Figure
     {
+        private Board board;
         protected bool doubleMoveAvalible = true;
         public Pawn(Point point, string color, Board board, Point dir) : base(point, color, board)
         {
@@ -43,7 +46,76 @@ namespace Chess.Models.Figures
                 }
             }
 
+            //check pawn transform
+            // refactor to team systems
+
+            if(color == "Purple")
+            {
+                if(position.y == 8)
+                {
+                    transformPawn();
+
+                }
+            }else if (color == "Blue")
+            {
+                if (position.y == 1)
+                {
+                    transformPawn();
+                }
+            }
+
         }
+
+        private void transformPawn()
+        {
+            Console.WriteLine("Choose transform");
+            Console.WriteLine("1. Queen");
+            Console.WriteLine("2. Rook");
+            Console.WriteLine("3. Bishop");
+            Console.WriteLine("4. Horse");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (Tools.Tools.pointAxisValid(input))
+                {
+                    if (Convert.ToInt32(input) > 0 && Convert.ToInt32(input) < 5)
+                    {
+                        switch (Convert.ToInt32(input))
+                        {
+                            case 1: {
+                                    board.removeFigure(this);
+                                    board.setFigure(new Queen(position, this.color, board), position);
+                                    break; 
+                                }
+                            case 2: {
+                                    board.removeFigure(this);
+                                    board.setFigure(new Rook(position, this.color, board), position);
+                                    break; 
+                                }
+                            case 3: {
+                                    board.removeFigure(this);
+                                    board.setFigure(new Bishop(position, this.color, board), position);
+                                    break; 
+                                }
+                            case 4: {
+                                    board.removeFigure(this);
+                                    board.setFigure(new Horse(position, this.color, board), position);
+                                    break; 
+                                }
+                            default: continue;
+                        }
+                        break;
+                    }
+                    continue;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+
         public override List<Point> getMovePoints()
         {
             Move move = moveSet.moves[0];

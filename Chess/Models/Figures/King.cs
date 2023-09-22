@@ -152,7 +152,6 @@ namespace Chess.Models.Figures
                     res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
                 }
             }
-
             //rokirovka
             if (this.RookSwapAvalible().leftRook == true)
             {
