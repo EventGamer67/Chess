@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Chess.Models.Figures;
@@ -10,6 +11,7 @@ using Chess.Models.Movement;
 
 namespace Chess.Models.Core
 {
+    [Serializable]
     class Board
     {
         public int width, height;
@@ -95,6 +97,47 @@ namespace Chess.Models.Core
             }
         }
 
+        public Board DeepCopy()
+        {
+            return DeepCopyHelper.DeepCopy(this);
+        }
+
+        //public Board Copy()
+        //{
+        //    // Копируем состояние доски, фигур и позиций в новый объект
+        //    // Не забудьте глубоко скопировать все связанные объекты
+        //    // Например, можно использовать конструкторы копирования для фигур и позиций
+        //    // newBoard.Figures = this.Figures.Select(figure => figure.Copy()).ToList();
+        //    // newBoard.Positions = this.Positions.Select(position => position.Copy()).ToList();
+        //    // Копируем другие данные, если они есть
+        //    Board newBoard = new Board(this.width,this.height,this.game);
+        //    newBoard.figures = this.figures.Select(figure => figure.Copy()).ToList();
+        //    return newBoard;
+        //}
+
+        public bool IsMyKingAttacked(Board board, string myColor)
+        {
+            Figure myKing = board.getTeamFigures(myColor).Where(figure => figure is King).ToList()[0];
+
+            List<string> colors = new List<string>();
+            colors = board.game.Players.ToList();
+            colors.Remove(myColor);
+
+            foreach (string color in colors)
+            {
+                List<Point> enemyPoints = board.getTeamMovePoints(color,false);
+                enemyPoints = enemyPoints.Distinct().ToList();
+                foreach (Point enemyPoint in enemyPoints)
+                {
+                    if (myKing.position.x == enemyPoint.x && myKing.position.y == enemyPoint.y)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public void DisplayBoard()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -174,11 +217,17 @@ namespace Chess.Models.Core
             else { return ' '; }
         }
         public bool isSlotEmpty(Point point) => !figures.Any(figure => figure.position.x == point.x && figure.position.y == point.y);
+
+        
+
         public string FigureCanMoveToPoint(Figure figure, Point point)
         {
             if (figure.pointMovable(point))
             {
                 return "Ok";
+
+                
+
                 //Move move = figure.moveSet.getMove(point, figure.position.x, figure.position.y);
                 //if (!(move is null) && move.requireEnemyChecking)
                 //{
@@ -286,7 +335,21 @@ namespace Chess.Models.Core
             figure.setPosition(newPosition);
             figure.onFigureMoved();
         }
-        public List<Point> getTeamMovePoints(string color)
+
+        public List<Point> clearNonValid(List<Point> points)
+        {
+            List<Point> filtered = new List<Point>();
+            foreach (Point point in points)
+            {
+                if (this.PointValid(point))
+                {
+                    filtered.Add(point);
+                }
+            }
+            return filtered;
+        }
+
+        public List<Point> getTeamMovePoints(string color,bool recursion)
         {
             List<Figure> teamFigures = figures.Where(figure => figure.color == color).ToList();
             List<Point> movePoints = new List<Point>();
@@ -294,8 +357,14 @@ namespace Chess.Models.Core
             {
                 if (!(figure is King))
                 {
-                    movePoints.AddRange(figure.getMovePoints());
-
+                    if (recursion)
+                    {
+                        movePoints.AddRange(figure.getMovePoints());
+                    }
+                    else
+                    {
+                        movePoints.AddRange(figure.getMovePointsWithoutFiltering());
+                    }
                 }
                 else
                 {

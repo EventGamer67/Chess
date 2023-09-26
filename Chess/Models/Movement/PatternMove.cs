@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Chess.Models.Movement
 {
+    [Serializable]
+
     class PatternMove : Move
     {
         public PatternMove(bool requireEnemyChecking, List<Point> points)

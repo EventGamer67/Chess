@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chess.Models.Core
 {
+
+
+    [Serializable]
     class Point
     {
         public int x, y;

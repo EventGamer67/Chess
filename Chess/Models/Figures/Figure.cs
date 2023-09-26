@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Chess.Models.Movement;
 using System.Net;
+using System.Data;
 
 namespace Chess.Models.Figures
 {
+    [Serializable]
     class Figure
     {
         public string name;
@@ -31,20 +33,39 @@ namespace Chess.Models.Figures
             return ress;
         }
 
-        public virtual List<Point> getMovePoints()
+        public List<Point> clearNonSecuritedPoints(List<Point> points)
+        {
+            List<Point> filteredList = new List<Point>();
+            foreach (Point point in points) {
+                //тут надо делать глубокое копирование доски, иначе все ломается
+                Board FutureBoard = this.board.DeepCopy();
+                Figure figure = FutureBoard.GetFigureAtPoint(new Point(this.position.x,this.position.y));
+                FutureBoard.MoveFigure(figure, new Point(point.x,point.y));
+                //Console.WriteLine();
+                //FutureBoard.DisplayBoard();
+                //Console.WriteLine();
+                //Console.WriteLine(point.getAsString());
+                //Console.WriteLine();
+                if (!FutureBoard.IsMyKingAttacked(FutureBoard,this.color))
+                {
+                    //Console.WriteLine("delete");
+                    filteredList.Add(point);
+                }
+            }
+            return filteredList;
+            //return points;
+        }
+        public virtual List<Point> getMovePointsWithoutFiltering()
         {
             List<Point> res = new List<Point>();
-
             foreach (Move move in moveSet.moves)
             {
                 List<Point> points = ConvertRelativePointToAbsolute(move.getMovePoints());
-
                 if (move.requireEnemyChecking)
                 {
                     foreach (Point point in points)
                     {
                         //Console.WriteLine(point.getAsString());
-
                         if (!board.isSlotEmpty(point))
                         {
                             Figure figure = board.GetFigureAtPoint(point);
@@ -53,7 +74,6 @@ namespace Chess.Models.Figures
                                 res.Add(point);
                             }
                             break;
-
                         }
                         else
                         {
@@ -79,7 +99,58 @@ namespace Chess.Models.Figures
                     res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
                 }
             }
+            res = board.clearNonValid(res);
             return res;
+        }
+
+        public virtual List<Point> getMovePoints()
+        {
+            List<Point> res = new List<Point>();
+            foreach (Move move in moveSet.moves)
+            {
+                List<Point> points = ConvertRelativePointToAbsolute(move.getMovePoints());
+                if (move.requireEnemyChecking)
+                {
+                    foreach (Point point in points)
+                    {
+                        //Console.WriteLine(point.getAsString());
+                        if (!board.isSlotEmpty(point))
+                        {
+                            Figure figure = board.GetFigureAtPoint(point);
+                            if (board.FiguresIsEnemies(figure, this))
+                            {
+                                res.Add(point);
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            res.Add(point);
+                        }
+                    }
+                }
+                else
+                {
+                    res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
+                    List<Point> clearPoints = new List<Point>();
+                    foreach (Point point in res)
+                    {
+                        if (!board.isSlotEmpty(point))
+                        {
+                            Figure figure = board.GetFigureAtPoint(point);
+                            if (!board.FiguresIsEnemies(figure, this))
+                            {
+                                clearPoints.Add(point);
+                            }
+                        }
+                    }
+                    res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
+                }
+            }
+            
+            res = board.clearNonValid(res);
+            List<Point> filtered = this.clearNonSecuritedPoints(res);
+            return filtered;
         }
         public virtual void onFigureMoved()
         {

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Chess.Models.Movement
 {
+    [Serializable]
+
     class SingleMoveWithoutCheckingPathWay : Move
     {
         public SingleMoveWithoutCheckingPathWay(Point point)

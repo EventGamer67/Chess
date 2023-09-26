@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Chess.Models.Movement
 {
+    [Serializable]
+
     class LineMoveCheckingPathWay : Move
     {
         Point deltaWay;

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Chess.Models.Movement
 {
+    [Serializable]
     class MoveSet
     {
         public List<Move> moves = new List<Move>();

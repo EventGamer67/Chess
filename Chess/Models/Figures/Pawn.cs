@@ -11,6 +11,7 @@ using System.CodeDom;
 
 namespace Chess.Models.Figures
 {
+    [Serializable]
     class Pawn : Figure
     {
         private Board board;
@@ -130,8 +131,10 @@ namespace Chess.Models.Figures
                 if (doubleMoveAvalible)
                 {
                     Point point = new Point(position.x + movePoint.x + movePoint.x, position.y + movePoint.y + movePoint.y);
-                    //Console.WriteLine("special move:" + point.getAsString());
-                    res.Add(point);
+                    if (board.isSlotEmpty(point))
+                    {
+                        res.Add(point);
+                    }
                 }
             }
             //WARNING MOMENT IN OFFSET
@@ -214,10 +217,10 @@ namespace Chess.Models.Figures
                     }
                 }
             }
-            //foreach (Point point in res)
-            //{
-            //    Console.WriteLine(point.getAsString());
-            //}
+
+            res = board.clearNonValid(res);
+            List<Point> filtered = this.clearNonSecuritedPoints(res);
+
             return res;
         }
     }

@@ -8,6 +8,7 @@ using Chess.Tools;
 
 namespace Chess.Models.Core
 {
+    [Serializable]
     class Game
     {
         bool running = false;

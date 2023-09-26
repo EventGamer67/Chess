@@ -8,6 +8,7 @@ using Chess.Models.Movement;
 
 namespace Chess.Models.Figures
 {
+    [Serializable]
     class Horse : Figure
     {
         public Horse(Point point, string color, Board board) : base(point, color, board)
