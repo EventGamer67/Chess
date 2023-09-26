@@ -14,7 +14,6 @@ namespace Chess.Models.Figures
     [Serializable]
     class Pawn : Figure
     {
-        private Board board;
         protected bool doubleMoveAvalible = true;
         public Pawn(Point point, string color, Board board, Point dir) : base(point, color, board)
         {

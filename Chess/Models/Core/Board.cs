@@ -24,6 +24,7 @@ namespace Chess.Models.Core
             this.game = game;
             figures = new List<Figure>();
         }
+
         public void DisplayFigureMoves(Figure figure)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -96,25 +97,10 @@ namespace Chess.Models.Core
                 Console.ForegroundColor = ConsoleColor.White;
             }
         }
-
         public Board DeepCopy()
         {
             return DeepCopyHelper.DeepCopy(this);
         }
-
-        //public Board Copy()
-        //{
-        //    // Копируем состояние доски, фигур и позиций в новый объект
-        //    // Не забудьте глубоко скопировать все связанные объекты
-        //    // Например, можно использовать конструкторы копирования для фигур и позиций
-        //    // newBoard.Figures = this.Figures.Select(figure => figure.Copy()).ToList();
-        //    // newBoard.Positions = this.Positions.Select(position => position.Copy()).ToList();
-        //    // Копируем другие данные, если они есть
-        //    Board newBoard = new Board(this.width,this.height,this.game);
-        //    newBoard.figures = this.figures.Select(figure => figure.Copy()).ToList();
-        //    return newBoard;
-        //}
-
         public bool IsMyKingAttacked(Board board, string myColor)
         {
             Figure myKing = board.getTeamFigures(myColor).Where(figure => figure is King).ToList()[0];
@@ -137,7 +123,6 @@ namespace Chess.Models.Core
             }
             return false;
         }
-
         public void DisplayBoard()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -179,7 +164,6 @@ namespace Chess.Models.Core
             }
             return true;
         }
-
         private char GetSymbolForFigure(Figure figure)
         {
             if (figure != null)
@@ -217,9 +201,6 @@ namespace Chess.Models.Core
             else { return ' '; }
         }
         public bool isSlotEmpty(Point point) => !figures.Any(figure => figure.position.x == point.x && figure.position.y == point.y);
-
-        
-
         public string FigureCanMoveToPoint(Figure figure, Point point)
         {
             if (figure.pointMovable(point))
@@ -280,7 +261,6 @@ namespace Chess.Models.Core
             teams = this.figures.Where(figure => figure.color == color).ToList();
             return teams;
         }
-
         public List<Point> getFiguresPositionPoint(List<Figure> figures)
         {
             List<Point> points = new List<Point>();
@@ -290,7 +270,6 @@ namespace Chess.Models.Core
             }
             return points;
         }
-
         public Figure GetFigureAtPoint(Point point) => this.figures.FirstOrDefault(figure => figure.position.x == point.x && figure.position.y == point.y);
         public string GetFiguresAsString(string filter)
         {
@@ -335,7 +314,6 @@ namespace Chess.Models.Core
             figure.setPosition(newPosition);
             figure.onFigureMoved();
         }
-
         public List<Point> clearNonValid(List<Point> points)
         {
             List<Point> filtered = new List<Point>();
@@ -348,7 +326,6 @@ namespace Chess.Models.Core
             }
             return filtered;
         }
-
         public List<Point> getTeamMovePoints(string color,bool recursion)
         {
             List<Figure> teamFigures = figures.Where(figure => figure.color == color).ToList();

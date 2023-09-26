@@ -17,6 +17,7 @@ namespace Chess.Models.Core
         int currentPlayerIndex = 0;
         public void startGame()
         {
+            #region [Initializing]
             board.resetBoard();
             running = true;
 
@@ -66,15 +67,12 @@ namespace Chess.Models.Core
             board.setFigure(new Queen(new Point(0, 0), "Blue", board), new Point(4, 8));
             board.setFigure(new King(new Point(0, 0), "Blue", board), new Point(5, 8));
 
+            #endregion
 
             while (running)
             {
                 board.DisplayBoard();
-
-                //Console.WriteLine(board.GetFiguresAsString(null));
-
                 Console.WriteLine($"\n {Players[currentPlayerIndex]} select figure coordinate");
-
                 Console.WriteLine("x:");
                 string selectedX = Console.ReadLine();
                 if (!Tools.Tools.pointAxisValid(selectedX))
@@ -158,7 +156,6 @@ namespace Chess.Models.Core
                 }
             }
         }
-
         public Game()
         {
             this.board = new Board(8, 8, this);

@@ -48,7 +48,6 @@
     <Compile Include="Models\Core\Board.cs" />
     <Compile Include="Models\Core\Game.cs" />
     <Compile Include="Models\Core\Point.cs" />
-    <Compile Include="Models\Core\Team.cs" />
     <Compile Include="Models\Figures\Bishop.cs" />
     <Compile Include="Models\Figures\Figure.cs" />
     <Compile Include="Models\Figures\Horse.cs" />
