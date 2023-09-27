@@ -220,7 +220,7 @@ namespace Chess.Models.Figures
             res = board.clearNonValid(res);
             List<Point> filtered = this.clearNonSecuritedPoints(res);
 
-            return res;
+            return filtered;
         }
     }
 

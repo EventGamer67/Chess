@@ -123,6 +123,12 @@ namespace Chess.Models.Core
             }
             return false;
         }
+        public bool IsMyKingSaveable(Board board, string myColor)
+        {
+            List<Point> moves = board.getTeamMovePoints(myColor, false);
+            //List<Point> moves = board.getTeamMovePoints(myColor,true); 
+            return (moves.Count > 0 ? true : false);
+        }
         public void DisplayBoard()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -147,6 +153,14 @@ namespace Chess.Models.Core
                     {
                         symbolToDisplay = GetSymbolForFigure(figureAtPoint);
                         Console.ForegroundColor = figureAtPoint.colorColor;
+
+                        if (figureAtPoint is King)
+                        {
+                            if (IsMyKingAttacked(this, figureAtPoint.color))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
+                        }
                     }
                     Console.Write($"[{symbolToDisplay}]");
 

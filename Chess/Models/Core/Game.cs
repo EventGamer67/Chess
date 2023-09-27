@@ -72,6 +72,20 @@ namespace Chess.Models.Core
             while (running)
             {
                 board.DisplayBoard();
+                Console.WriteLine();
+                if (board.IsMyKingAttacked(board, Players[currentPlayerIndex]))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("King Attacked");
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    if (!board.IsMyKingSaveable(board, Players[currentPlayerIndex]))
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"{Players[currentPlayerIndex]} loose" );
+                        break;
+                    }
+                }
                 Console.WriteLine($"\n {Players[currentPlayerIndex]} select figure coordinate");
                 Console.WriteLine("x:");
                 string selectedX = Console.ReadLine();
