@@ -122,6 +122,13 @@ namespace Chess.Models.Core
                     continue;
                 }
 
+                if (!selectedFigure.figureCanMove())
+                {
+                    Console.Clear();
+                    Console.WriteLine("figure no avalible move points");
+                    continue;
+                }
+
                 Console.Clear();
                 Console.WriteLine($"Selected figure: {selectedFigure.name} {selectedFigure.color} {selectedFigure.position.getAsString()}");
                 board.DisplayFigureMoves(selectedFigure);

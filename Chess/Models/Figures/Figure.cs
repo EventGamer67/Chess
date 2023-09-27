@@ -22,6 +22,10 @@ namespace Chess.Models.Figures
         public Board board;
         public int MoveCount = 0;
 
+        public bool figureCanMove()
+        {
+            return this.getMovePoints().Count > 0 ? true : false;
+        }
         public List<Point> ConvertRelativePointToAbsolute(List<Point> points)
         {
             List<Point> ress = new List<Point>();
@@ -32,7 +36,6 @@ namespace Chess.Models.Figures
             }
             return ress;
         }
-
         public List<Point> clearNonSecuritedPoints(List<Point> points)
         {
             List<Point> filteredList = new List<Point>();
@@ -102,7 +105,6 @@ namespace Chess.Models.Figures
             res = board.clearNonValid(res);
             return res;
         }
-
         public virtual List<Point> getMovePoints()
         {
             List<Point> res = new List<Point>();
