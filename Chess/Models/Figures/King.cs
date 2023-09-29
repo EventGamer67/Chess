@@ -126,8 +126,6 @@ namespace Chess.Models.Figures
                 {
                     foreach (Point point in points)
                     {
-                        //Console.WriteLine(point.getAsString());
-
                         res.Add(point);
                         if (!board.isSlotEmpty(point))
                         {
@@ -167,40 +165,14 @@ namespace Chess.Models.Figures
             //cleaning points
             List<String> colors = new List<String>();
             colors = board.game.Players.ToList();
-            //foreach (String color in colors) Console.WriteLine(color);
             colors.Remove(this.color);
-            //foreach (String color in colors) Console.WriteLine(color);
             foreach (String color in colors)
             {
                 List<Point> teamPoints = board.getTeamMovePoints(color,true);
                 teamPoints = teamPoints.Distinct().ToList();
-                //Console.WriteLine(teamPoints.Count);
                 res.RemoveAll(point => teamPoints.Any(pointTeam => point.x == pointTeam.x && point.y == pointTeam.y));
-                //res.Except(teamPoints);
-
             }
             res = board.clearNonValid(res);
-            return res;
-        }
-
-        public bool IsSecurited(List<Figure> allFigures)
-        {
-            bool res = true;
-
-            List<String> colors = new List<String>();
-            colors = board.game.Players.ToList();
-            colors.Remove(this.color);
-
-
-            //foreach (String color in colors)
-            //{
-            //    List<Point> teamPoints = board.getTeamMovePoints(color);
-            //    teamPoints = teamPoints.Distinct().ToList();
-            //    //Console.WriteLine(teamPoints.Count);
-            //    res.RemoveAll(point => teamPoints.Any(pointTeam => point.x == pointTeam.x && point.y == pointTeam.y));
-            //    //res.Except(teamPoints);
-
-            //}
             return res;
         }
     }

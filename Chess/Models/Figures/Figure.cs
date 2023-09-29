@@ -44,19 +44,12 @@ namespace Chess.Models.Figures
                 Board FutureBoard = this.board.DeepCopy();
                 Figure figure = FutureBoard.GetFigureAtPoint(new Point(this.position.x,this.position.y));
                 FutureBoard.MoveFigure(figure, new Point(point.x,point.y));
-                //Console.WriteLine();
-                //FutureBoard.DisplayBoard();
-                //Console.WriteLine();
-                //Console.WriteLine(point.getAsString());
-                //Console.WriteLine();
                 if (!FutureBoard.IsMyKingAttacked(FutureBoard,this.color))
                 {
-                    //Console.WriteLine("delete");
                     filteredList.Add(point);
                 }
             }
             return filteredList;
-            //return points;
         }
         public virtual List<Point> getMovePointsWithoutFiltering()
         {
@@ -68,7 +61,6 @@ namespace Chess.Models.Figures
                 {
                     foreach (Point point in points)
                     {
-                        //Console.WriteLine(point.getAsString());
                         if (!board.isSlotEmpty(point))
                         {
                             Figure figure = board.GetFigureAtPoint(point);
@@ -149,7 +141,6 @@ namespace Chess.Models.Figures
                     res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
                 }
             }
-            
             res = board.clearNonValid(res);
             List<Point> filtered = this.clearNonSecuritedPoints(res);
             return filtered;
@@ -192,21 +183,11 @@ namespace Chess.Models.Figures
                     this.colorColor = ConsoleColor.White;
                     break;
             }
-            //this.movePoints.Add(new Point(0, 0));
         }
         public virtual bool IsPatternMoveValid(Point newPoint)
         {
             Point compareRelativePoint = new Point(newPoint.x - this.position.x, newPoint.y - this.position.y);
-            //Console.WriteLine(compareRelativePoint.getAsString());
-
-            //foreach (Point patt in movePoints)
-            //{
-            //    Console.WriteLine(patt.getAsString());
-            //}
-
             return this.movePoints.IndexOf(compareRelativePoint) > 0 ? true : false;
-
-            //return this.movePoints.Contains(compareRelativePoint);
         }
         public void setAvalibleMovePoints()
         {

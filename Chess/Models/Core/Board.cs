@@ -125,8 +125,8 @@ namespace Chess.Models.Core
         }
         public bool IsMyKingSaveable(Board board, string myColor)
         {
-            List<Point> moves = board.getTeamMovePoints(myColor, false);
-            //List<Point> moves = board.getTeamMovePoints(myColor,true); 
+            //List<Point> moves = board.getTeamMovePoints(myColor, false);
+            List<Point> moves = board.getTeamMovePoints(myColor,true); 
             return (moves.Count > 0 ? true : false);
         }
         public void DisplayBoard()
@@ -220,38 +220,6 @@ namespace Chess.Models.Core
             if (figure.pointMovable(point))
             {
                 return "Ok";
-
-                
-
-                //Move move = figure.moveSet.getMove(point, figure.position.x, figure.position.y);
-                //if (!(move is null) && move.requireEnemyChecking)
-                //{
-                //    if (isSlotEmpty(point))
-                //    {
-                //        return "Ok";
-                //    }
-                //    else
-                //    {
-                //        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
-                //    }
-                //    //}
-                //    //else
-                //    //{
-                //    //    return "cannot move figure - other figure on the way";
-                //    //}
-                //}
-                //else
-                //{
-                //    //Console.WriteLine("4");
-                //    if (isSlotEmpty(point))
-                //    {
-                //        return "Ok";
-                //    }
-                //    else
-                //    {
-                //        return FiguresIsEnemies(figure, GetFigureAtPoint(point)) == true ? "Ok" : "Can move on friendly figure";
-                //    }
-                //}
             }
             else
             {

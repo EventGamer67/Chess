@@ -136,10 +136,8 @@ namespace Chess.Models.Figures
                     }
                 }
             }
-            //WARNING MOMENT IN OFFSET
             Point comparer = new Point(0,0);
             Point comparer2 = new Point(0, 0);
-
 
             if (movePoint.y == 1)
             {
