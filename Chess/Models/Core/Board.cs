@@ -17,12 +17,15 @@ namespace Chess.Models.Core
         public int width, height;
         protected List<Figure> figures;
         public Game game;
-        public Board(int width, int height, Game game)
+        public bool isFutureBoard;
+
+        public Board(int width, int height, Game game, bool isFutureBoard)
         {
             this.width = width;
             this.height = height;
             this.game = game;
             figures = new List<Figure>();
+            this.isFutureBoard = isFutureBoard;
         }
 
         public void DisplayFigureMoves(Figure figure)
@@ -103,21 +106,24 @@ namespace Chess.Models.Core
         }
         public bool IsMyKingAttacked(Board board, string myColor)
         {
-            Figure myKing = board.getTeamFigures(myColor).Where(figure => figure is King).ToList()[0];
-
-            List<string> colors = new List<string>();
-            colors = board.game.Players.ToList();
-            colors.Remove(myColor);
-
-            foreach (string color in colors)
+            if (board.getTeamFigures(myColor).Any(figure => figure is King))
             {
-                List<Point> enemyPoints = board.getTeamMovePoints(color,false);
-                enemyPoints = enemyPoints.Distinct().ToList();
-                foreach (Point enemyPoint in enemyPoints)
+                Figure myKing = board.getTeamFigures(myColor).Where(figure => figure is King).ToList()[0];
+
+                List<string> colors = new List<string>();
+                colors = board.game.Players.ToList();
+                colors.Remove(myColor);
+
+                foreach (string color in colors)
                 {
-                    if (myKing.position.x == enemyPoint.x && myKing.position.y == enemyPoint.y)
+                    List<Point> enemyPoints = board.getTeamMovePoints(color, false);
+                    enemyPoints = enemyPoints.Distinct().ToList();
+                    foreach (Point enemyPoint in enemyPoints)
                     {
-                        return true;
+                        if (myKing.position.x == enemyPoint.x && myKing.position.y == enemyPoint.y)
+                        {
+                            return true;
+                        }
                     }
                 }
             }

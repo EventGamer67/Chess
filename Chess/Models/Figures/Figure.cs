@@ -42,6 +42,7 @@ namespace Chess.Models.Figures
             foreach (Point point in points) {
                 //тут надо делать глубокое копирование доски, иначе все ломается
                 Board FutureBoard = this.board.DeepCopy();
+                FutureBoard.isFutureBoard = true;
                 Figure figure = FutureBoard.GetFigureAtPoint(new Point(this.position.x,this.position.y));
                 FutureBoard.MoveFigure(figure, new Point(point.x,point.y));
                 if (!FutureBoard.IsMyKingAttacked(FutureBoard,this.color))

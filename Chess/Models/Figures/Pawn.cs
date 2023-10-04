@@ -48,22 +48,24 @@ namespace Chess.Models.Figures
 
             //check pawn transform
             // refactor to team systems
-
-            if(color == "Purple")
+            if (!this.board.isFutureBoard)
             {
-                if(position.y == 8)
+                if (color == "Purple")
                 {
-                    transformPawn();
+                    if (position.y == 8)
+                    {
+                        transformPawn();
 
+                    }
                 }
-            }else if (color == "Blue")
-            {
-                if (position.y == 1)
+                else if (color == "Blue")
                 {
-                    transformPawn();
+                    if (position.y == 1)
+                    {
+                        transformPawn();
+                    }
                 }
             }
-
         }
 
         private void transformPawn()
