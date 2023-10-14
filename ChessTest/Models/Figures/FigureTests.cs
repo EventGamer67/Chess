@@ -117,5 +117,37 @@ namespace Chess.Models.Figures.Tests
 
             Assert.IsNotNull(figure.getMovePoints);
         }
+
+        [TestMethod()]
+        public void Bishop_createTest()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            try
+            {
+                var figure = new Bishop(new Point(2, 2), "Blue", board);
+                Assert.IsTrue(figure.moveSet.moves.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
+        }
+
+        [TestMethod()]
+        public void Horse_createTest()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            try
+            {
+                var figure = new Horse(new Point(2, 2), "Blue", board);
+                Assert.IsTrue(figure.moveSet.moves.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ using Chess.Models.Movement;
 namespace Chess.Models.Figures
 {
     [Serializable]
-    class Bishop : Figure
+    public class Bishop : Figure
     {
         public Bishop(Point point, string color, Board board) : base(point, color, board)
         {
