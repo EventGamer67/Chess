@@ -12,7 +12,7 @@ using Chess.Models.Movement;
 namespace Chess.Models.Core
 {
     [Serializable]
-    class Board
+    public class Board
     {
         public int width, height;
         protected List<Figure> figures;

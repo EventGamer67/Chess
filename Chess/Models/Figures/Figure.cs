@@ -11,7 +11,7 @@ using System.Data;
 namespace Chess.Models.Figures
 {
     [Serializable]
-    class Figure
+    public class Figure
     {
         public string name;
         public Point position;

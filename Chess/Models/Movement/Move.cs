@@ -10,7 +10,7 @@ namespace Chess.Models.Movement
 {
     [Serializable]
 
-    class Move
+    public class Move
     {
         public List<Point> getMovePoints()
         {

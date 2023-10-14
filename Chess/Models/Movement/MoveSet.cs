@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Chess.Models.Movement
 {
     [Serializable]
-    class MoveSet
+    public class MoveSet
     {
         public List<Move> moves = new List<Move>();
         public Move getMove(Point destinaton, int offsetX, int offsetY)

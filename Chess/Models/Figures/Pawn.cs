@@ -12,7 +12,7 @@ using System.CodeDom;
 namespace Chess.Models.Figures
 {
     [Serializable]
-    class Pawn : Figure
+    public class Pawn : Figure
     {
         protected bool doubleMoveAvalible = true;
         public Pawn(Point point, string color, Board board, Point dir) : base(point, color, board)
@@ -46,10 +46,11 @@ namespace Chess.Models.Figures
                 }
             }
 
-            //check pawn transform
-            // refactor to team systems
+            
             if (!this.board.isFutureBoard)
             {
+                //check pawn transform
+                // refactor to team systems
                 if (color == "Purple")
                 {
                     if (position.y == 8)

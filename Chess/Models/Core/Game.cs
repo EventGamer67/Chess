@@ -9,7 +9,7 @@ using Chess.Tools;
 namespace Chess.Models.Core
 {
     [Serializable]
-    class Game
+    public class Game
     {
         bool running = false;
         Board board;
@@ -42,8 +42,8 @@ namespace Chess.Models.Core
             board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(7, 2));
             board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(8, 2));
 
-            //board.setFigure(new Queen(new Point(0, 0), "Blue", board), new Point(4, 8));
-            board.setFigure(new Queen(new Point(0, 0), "Purple", board), new Point(2, 7));
+            board.setFigure(new Queen(new Point(0, 0), "Blue", board), new Point(4, 8));
+            board.setFigure(new Queen(new Point(0, 0), "Purple", board), new Point(5, 1));
 
 
             board.setFigure(new Horse(new Point(0, 0), "Blue", board), new Point(2, 8));
@@ -64,8 +64,8 @@ namespace Chess.Models.Core
             board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(7, 7));
             board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(8, 7));
 
-            //board.setFigure(new King(new Point(0, 0), "Blue", board), new Point(5, 8));
-            //board.setFigure(new King(new Point(0, 0), "Purple", board), new Point(5, 6));
+            board.setFigure(new King(new Point(0, 0), "Blue", board), new Point(5, 8));
+            board.setFigure(new King(new Point(0, 0), "Purple", board), new Point(4, 1));
 
             #endregion
 
