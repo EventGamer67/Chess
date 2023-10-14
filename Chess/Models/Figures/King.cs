@@ -9,7 +9,7 @@ using Chess.Models.Movement;
 namespace Chess.Models.Figures
 {
     [Serializable]
-    class King : Figure
+    public class King : Figure
     {
         public King(Point point, string color, Board board) : base(point, color, board)
         {

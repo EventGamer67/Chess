@@ -58,12 +58,12 @@
     <Compile Include="Models\Movement\LineMove.cs" />
     <Compile Include="Models\Movement\Move.cs" />
     <Compile Include="Models\Movement\MoveSet.cs" />
-    <Compile Include="Models\Movement\PatternMove.cs" />
     <Compile Include="Models\Movement\SingleMove.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\DeepCloneHelper.cs" />
     <Compile Include="Tools\Tools.cs" />
+    <Compile Include="Tools\uff.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

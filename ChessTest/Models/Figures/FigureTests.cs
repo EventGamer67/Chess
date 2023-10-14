@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Chess.Models.Core;
+using System.Collections;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace Chess.Models.Figures.Tests
 {
@@ -142,6 +144,54 @@ namespace Chess.Models.Figures.Tests
             try
             {
                 var figure = new Horse(new Point(2, 2), "Blue", board);
+                Assert.IsTrue(figure.moveSet.moves.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
+        }
+
+        [TestMethod()]
+        public void Rook_createTest()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            try
+            {
+                var figure = new Rook(new Point(2, 2), "Blue", board);
+                Assert.IsTrue(figure.moveSet.moves.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
+        }
+
+        [TestMethod()]
+        public void Queen_createTest()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            try
+            {
+                var figure = new Queen(new Point(2, 2), "Blue", board);
+                Assert.IsTrue(figure.moveSet.moves.Count > 0);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail();
+            }
+        }
+
+        [TestMethod()]
+        public void King_createTest()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            try
+            {
+                var figure = new King(new Point(2, 2), "Blue", board);
                 Assert.IsTrue(figure.moveSet.moves.Count > 0);
             }
             catch (Exception ex)

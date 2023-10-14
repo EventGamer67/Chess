@@ -1,68 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.1495" branch-rate="0.0353" version="1.9" timestamp="1697287040" lines-covered="159" lines-valid="1063" branches-covered="12" branches-valid="339">
+<coverage line-rate="0.2703" branch-rate="0.058899999999999994" version="1.9" timestamp="1697289485" lines-covered="315" lines-valid="1165" branches-covered="20" branches-valid="339">
   <sources>
     <source>C:\Users\Danil\</source>
   </sources>
   <packages>
-    <package name="Chess" line-rate="0.09480000000000001" branch-rate="0.0268" complexity="363">
+    <package name="Chess" line-rate="0.1807" branch-rate="0.0507" complexity="364">
       <classes>
-        <class name="DeepCopyHelper" filename="source\repos\Chess\Chess\Tools\DeepCloneHelper.cs" line-rate="0" branch-rate="0" complexity="4">
+        <class name="DeepCopyHelper" filename="source\repos\Chess\Chess\Tools\DeepCloneHelper.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
-            <method name="DeepCopy" signature="(T)" line-rate="0" branch-rate="0" complexity="4">
+            <method name="DeepCopy" signature="(T)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="12" hits="3" branch="False" />
+                <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="21" type="jump" coverage="0%" />
+                    <condition number="21" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="51" type="jump" coverage="0%" />
+                    <condition number="51" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="19" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-                <line number="36" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="33" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="12" hits="3" branch="False" />
+            <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="21" type="jump" coverage="0%" />
+                <condition number="21" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="51" type="jump" coverage="0%" />
+                <condition number="51" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="36" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="33" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Chess.Program" filename="source\repos\Chess\Chess\Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
-            <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="1">
+            <method name="Main" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
                 <line number="25" hits="0" branch="False" />
                 <line number="26" hits="0" branch="False" />
@@ -78,48 +78,68 @@
             <line number="28" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Tools.Tools" filename="source\repos\Chess\Chess\Tools\Tools.cs" line-rate="0" branch-rate="0" complexity="4">
+        <class name="Chess.Tools.Tools" filename="source\repos\Chess\Chess\Tools\Tools.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
-            <method name="pointAxisValid" signature="(System.String)" line-rate="0" branch-rate="0" complexity="4">
+            <method name="pointAxisValid" signature="(System.String)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="12" hits="0" branch="False" />
-                <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="12" hits="3" branch="False" />
+                <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="9" type="jump" coverage="0%" />
+                    <condition number="9" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="29" type="jump" coverage="0%" />
+                    <condition number="29" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="19" hits="0" branch="False" />
-                <line number="20" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="12" hits="0" branch="False" />
-            <line number="13" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="12" hits="3" branch="False" />
+            <line number="13" hits="3" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="9" type="jump" coverage="0%" />
+                <condition number="9" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="18" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="18" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="29" type="jump" coverage="0%" />
+                <condition number="29" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="19" hits="0" branch="False" />
-            <line number="20" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="Chess.Tools.nonSerializble" filename="source\repos\Chess\Chess\Tools\uff.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="1" branch="False" />
+                <line number="12" hits="1" branch="False" />
+                <line number="13" hits="1" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="1" branch="False" />
+            <line number="12" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Movement.LineMoveCheckingPathWay" filename="source\repos\Chess\Chess\Models\Movement\LineMove.cs" line-rate="0.4285" branch-rate="0" complexity="3">
@@ -142,12 +162,12 @@
             </method>
             <method name=".ctor" signature="(Chess.Models.Core.Point)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="4" branch="False" />
-                <line number="16" hits="4" branch="False" />
-                <line number="17" hits="4" branch="False" />
-                <line number="18" hits="4" branch="False" />
-                <line number="19" hits="4" branch="False" />
-                <line number="20" hits="4" branch="False" />
+                <line number="15" hits="16" branch="False" />
+                <line number="16" hits="16" branch="False" />
+                <line number="17" hits="16" branch="False" />
+                <line number="18" hits="16" branch="False" />
+                <line number="19" hits="16" branch="False" />
+                <line number="20" hits="16" branch="False" />
               </lines>
             </method>
           </methods>
@@ -164,12 +184,12 @@
             <line number="27" hits="0" branch="False" />
             <line number="28" hits="0" branch="False" />
             <line number="29" hits="0" branch="False" />
-            <line number="15" hits="4" branch="False" />
-            <line number="16" hits="4" branch="False" />
-            <line number="17" hits="4" branch="False" />
-            <line number="18" hits="4" branch="False" />
-            <line number="19" hits="4" branch="False" />
-            <line number="20" hits="4" branch="False" />
+            <line number="15" hits="16" branch="False" />
+            <line number="16" hits="16" branch="False" />
+            <line number="17" hits="16" branch="False" />
+            <line number="18" hits="16" branch="False" />
+            <line number="19" hits="16" branch="False" />
+            <line number="20" hits="16" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Movement.Move" filename="source\repos\Chess\Chess\Models\Movement\Move.cs" line-rate="0.1" branch-rate="0" complexity="8">
@@ -218,8 +238,8 @@
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="5" branch="False" />
-                <line number="21" hits="5" branch="False" />
+                <line number="19" hits="33" branch="False" />
+                <line number="21" hits="33" branch="False" />
               </lines>
             </method>
           </methods>
@@ -250,8 +270,8 @@
             <line number="38" hits="0" branch="False" />
             <line number="39" hits="0" branch="False" />
             <line number="40" hits="0" branch="False" />
-            <line number="19" hits="5" branch="False" />
-            <line number="21" hits="5" branch="False" />
+            <line number="19" hits="33" branch="False" />
+            <line number="21" hits="33" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Movement.MoveSet" filename="source\repos\Chess\Chess\Models\Movement\MoveSet.cs" line-rate="0.1" branch-rate="0" complexity="7">
@@ -280,7 +300,7 @@
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="8" branch="False" />
+                <line number="13" hits="12" branch="False" />
               </lines>
             </method>
           </methods>
@@ -303,7 +323,7 @@
             <line number="22" hits="0" branch="False" />
             <line number="23" hits="0" branch="False" />
             <line number="24" hits="0" branch="False" />
-            <line number="13" hits="8" branch="False" />
+            <line number="13" hits="12" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Movement.PatternMove" filename="source\repos\Chess\Chess\Models\Movement\PatternMove.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -337,11 +357,11 @@
             </method>
             <method name=".ctor" signature="(Chess.Models.Core.Point)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="1" branch="False" />
-                <line number="15" hits="1" branch="False" />
-                <line number="16" hits="1" branch="False" />
-                <line number="17" hits="1" branch="False" />
-                <line number="18" hits="1" branch="False" />
+                <line number="14" hits="17" branch="False" />
+                <line number="15" hits="17" branch="False" />
+                <line number="16" hits="17" branch="False" />
+                <line number="17" hits="17" branch="False" />
+                <line number="18" hits="17" branch="False" />
               </lines>
             </method>
           </methods>
@@ -349,11 +369,11 @@
             <line number="20" hits="0" branch="False" />
             <line number="21" hits="0" branch="False" />
             <line number="22" hits="0" branch="False" />
-            <line number="14" hits="1" branch="False" />
-            <line number="15" hits="1" branch="False" />
-            <line number="16" hits="1" branch="False" />
-            <line number="17" hits="1" branch="False" />
-            <line number="18" hits="1" branch="False" />
+            <line number="14" hits="17" branch="False" />
+            <line number="15" hits="17" branch="False" />
+            <line number="16" hits="17" branch="False" />
+            <line number="17" hits="17" branch="False" />
+            <line number="18" hits="17" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Figures.Bishop" filename="source\repos\Chess\Chess\Models\Figures\Bishop.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -663,30 +683,30 @@
             </method>
             <method name="setAvalibleMovePoints" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="194" hits="2" branch="False" />
-                <line number="195" hits="10" branch="True" condition-coverage="100% (2/2)">
+                <line number="194" hits="4" branch="False" />
+                <line number="195" hits="48" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="56" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="196" hits="2" branch="False" />
-                <line number="197" hits="2" branch="False" />
-                <line number="198" hits="2" branch="False" />
-                <line number="199" hits="2" branch="False" />
+                <line number="196" hits="18" branch="False" />
+                <line number="197" hits="18" branch="False" />
+                <line number="198" hits="18" branch="False" />
+                <line number="199" hits="4" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="20" hits="8" branch="False" />
-                <line number="21" hits="8" branch="False" />
-                <line number="23" hits="8" branch="False" />
-                <line number="168" hits="8" branch="False" />
-                <line number="169" hits="8" branch="False" />
-                <line number="170" hits="8" branch="False" />
-                <line number="171" hits="8" branch="False" />
-                <line number="172" hits="8" branch="False" />
-                <line number="173" hits="8" branch="False" />
-                <line number="175" hits="8" branch="True" condition-coverage="100% (4/4)">
+                <line number="20" hits="12" branch="False" />
+                <line number="21" hits="12" branch="False" />
+                <line number="23" hits="12" branch="False" />
+                <line number="168" hits="12" branch="False" />
+                <line number="169" hits="12" branch="False" />
+                <line number="170" hits="12" branch="False" />
+                <line number="171" hits="12" branch="False" />
+                <line number="172" hits="12" branch="False" />
+                <line number="173" hits="12" branch="False" />
+                <line number="175" hits="12" branch="True" condition-coverage="100% (4/4)">
                   <conditions>
                     <condition number="84" type="jump" coverage="100%" />
                     <condition number="97" type="jump" coverage="100%" />
@@ -694,11 +714,11 @@
                 </line>
                 <line number="178" hits="1" branch="False" />
                 <line number="179" hits="1" branch="False" />
-                <line number="181" hits="6" branch="False" />
-                <line number="182" hits="6" branch="False" />
+                <line number="181" hits="10" branch="False" />
+                <line number="182" hits="10" branch="False" />
                 <line number="184" hits="1" branch="False" />
                 <line number="185" hits="1" branch="False" />
-                <line number="187" hits="8" branch="False" />
+                <line number="187" hits="12" branch="False" />
               </lines>
             </method>
           </methods>
@@ -934,26 +954,26 @@
               </conditions>
             </line>
             <line number="192" hits="0" branch="False" />
-            <line number="194" hits="2" branch="False" />
-            <line number="195" hits="10" branch="True" condition-coverage="100% (2/2)">
+            <line number="194" hits="4" branch="False" />
+            <line number="195" hits="48" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="56" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="196" hits="2" branch="False" />
-            <line number="197" hits="2" branch="False" />
-            <line number="198" hits="2" branch="False" />
-            <line number="199" hits="2" branch="False" />
-            <line number="20" hits="8" branch="False" />
-            <line number="21" hits="8" branch="False" />
-            <line number="23" hits="8" branch="False" />
-            <line number="168" hits="8" branch="False" />
-            <line number="169" hits="8" branch="False" />
-            <line number="170" hits="8" branch="False" />
-            <line number="171" hits="8" branch="False" />
-            <line number="172" hits="8" branch="False" />
-            <line number="173" hits="8" branch="False" />
-            <line number="175" hits="8" branch="True" condition-coverage="100% (4/4)">
+            <line number="196" hits="18" branch="False" />
+            <line number="197" hits="18" branch="False" />
+            <line number="198" hits="18" branch="False" />
+            <line number="199" hits="4" branch="False" />
+            <line number="20" hits="12" branch="False" />
+            <line number="21" hits="12" branch="False" />
+            <line number="23" hits="12" branch="False" />
+            <line number="168" hits="12" branch="False" />
+            <line number="169" hits="12" branch="False" />
+            <line number="170" hits="12" branch="False" />
+            <line number="171" hits="12" branch="False" />
+            <line number="172" hits="12" branch="False" />
+            <line number="173" hits="12" branch="False" />
+            <line number="175" hits="12" branch="True" condition-coverage="100% (4/4)">
               <conditions>
                 <condition number="84" type="jump" coverage="100%" />
                 <condition number="97" type="jump" coverage="100%" />
@@ -961,56 +981,56 @@
             </line>
             <line number="178" hits="1" branch="False" />
             <line number="179" hits="1" branch="False" />
-            <line number="181" hits="6" branch="False" />
-            <line number="182" hits="6" branch="False" />
+            <line number="181" hits="10" branch="False" />
+            <line number="182" hits="10" branch="False" />
             <line number="184" hits="1" branch="False" />
             <line number="185" hits="1" branch="False" />
-            <line number="187" hits="8" branch="False" />
+            <line number="187" hits="12" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Models.Figures.Horse" filename="source\repos\Chess\Chess\Models\Figures\Horse.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Chess.Models.Figures.Horse" filename="source\repos\Chess\Chess\Models\Figures\Horse.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Models.Figures.King" filename="source\repos\Chess\Chess\Models\Figures\King.cs" line-rate="0" branch-rate="0" complexity="53">
+        <class name="Chess.Models.Figures.King" filename="source\repos\Chess\Chess\Models\Figures\King.cs" line-rate="0.11109999999999999" branch-rate="0" complexity="53">
           <methods>
             <method name="getSelfMovePattern" signature="()" line-rate="0" branch-rate="0" complexity="8">
               <lines>
@@ -1256,24 +1276,24 @@
                 <line number="177" hits="0" branch="False" />
               </lines>
             </method>
-            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="31" hits="0" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -1510,22 +1530,22 @@
             <line number="175" hits="0" branch="False" />
             <line number="176" hits="0" branch="False" />
             <line number="177" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Figures.Pawn" filename="source\repos\Chess\Chess\Models\Figures\Pawn.cs" line-rate="0.0591" branch-rate="0" complexity="68">
@@ -2138,76 +2158,76 @@
             <line number="28" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Models.Figures.Queen" filename="source\repos\Chess\Chess\Models\Figures\Queen.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Chess.Models.Figures.Queen" filename="source\repos\Chess\Chess\Models\Figures\Queen.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Models.Figures.Rook" filename="source\repos\Chess\Chess\Models\Figures\Rook.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Chess.Models.Figures.Rook" filename="source\repos\Chess\Chess\Models\Figures\Rook.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(Chess.Models.Core.Point,System.String,Chess.Models.Core.Board)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
-                <line number="15" hits="0" branch="False" />
-                <line number="16" hits="0" branch="False" />
-                <line number="17" hits="0" branch="False" />
-                <line number="18" hits="0" branch="False" />
-                <line number="19" hits="0" branch="False" />
-                <line number="21" hits="0" branch="False" />
-                <line number="22" hits="0" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
+                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="14" hits="0" branch="False" />
-            <line number="15" hits="0" branch="False" />
-            <line number="16" hits="0" branch="False" />
-            <line number="17" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="22" hits="0" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
+            <line number="14" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Core.Board" filename="source\repos\Chess\Chess\Models\Core\Board.cs" line-rate="0.0553" branch-rate="0.0087" complexity="121">
@@ -2713,14 +2733,14 @@
             </method>
             <method name=".ctor" signature="(System.Int32,System.Int32,Chess.Models.Core.Game,System.Boolean)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="12" branch="False" />
-                <line number="23" hits="12" branch="False" />
-                <line number="24" hits="12" branch="False" />
-                <line number="25" hits="12" branch="False" />
-                <line number="26" hits="12" branch="False" />
-                <line number="27" hits="12" branch="False" />
-                <line number="28" hits="12" branch="False" />
-                <line number="29" hits="12" branch="False" />
+                <line number="22" hits="20" branch="False" />
+                <line number="23" hits="20" branch="False" />
+                <line number="24" hits="20" branch="False" />
+                <line number="25" hits="20" branch="False" />
+                <line number="26" hits="20" branch="False" />
+                <line number="27" hits="20" branch="False" />
+                <line number="28" hits="20" branch="False" />
+                <line number="29" hits="20" branch="False" />
               </lines>
             </method>
           </methods>
@@ -3140,14 +3160,14 @@
             <line number="338" hits="0" branch="False" />
             <line number="339" hits="0" branch="False" />
             <line number="340" hits="0" branch="False" />
-            <line number="22" hits="12" branch="False" />
-            <line number="23" hits="12" branch="False" />
-            <line number="24" hits="12" branch="False" />
-            <line number="25" hits="12" branch="False" />
-            <line number="26" hits="12" branch="False" />
-            <line number="27" hits="12" branch="False" />
-            <line number="28" hits="12" branch="False" />
-            <line number="29" hits="12" branch="False" />
+            <line number="22" hits="20" branch="False" />
+            <line number="23" hits="20" branch="False" />
+            <line number="24" hits="20" branch="False" />
+            <line number="25" hits="20" branch="False" />
+            <line number="26" hits="20" branch="False" />
+            <line number="27" hits="20" branch="False" />
+            <line number="28" hits="20" branch="False" />
+            <line number="29" hits="20" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Core.Game" filename="source\repos\Chess\Chess\Models\Core\Game.cs" line-rate="0.053" branch-rate="0" complexity="27">
@@ -3335,13 +3355,13 @@
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="6" branch="False" />
-                <line number="16" hits="6" branch="False" />
-                <line number="17" hits="6" branch="False" />
-                <line number="180" hits="6" branch="False" />
-                <line number="181" hits="6" branch="False" />
-                <line number="182" hits="6" branch="False" />
-                <line number="183" hits="6" branch="False" />
+                <line number="14" hits="10" branch="False" />
+                <line number="16" hits="10" branch="False" />
+                <line number="17" hits="10" branch="False" />
+                <line number="180" hits="10" branch="False" />
+                <line number="181" hits="10" branch="False" />
+                <line number="182" hits="10" branch="False" />
+                <line number="183" hits="10" branch="False" />
               </lines>
             </method>
           </methods>
@@ -3523,13 +3543,13 @@
             <line number="177" hits="0" branch="False" />
             <line number="178" hits="0" branch="False" />
             <line number="179" hits="0" branch="False" />
-            <line number="14" hits="6" branch="False" />
-            <line number="16" hits="6" branch="False" />
-            <line number="17" hits="6" branch="False" />
-            <line number="180" hits="6" branch="False" />
-            <line number="181" hits="6" branch="False" />
-            <line number="182" hits="6" branch="False" />
-            <line number="183" hits="6" branch="False" />
+            <line number="14" hits="10" branch="False" />
+            <line number="16" hits="10" branch="False" />
+            <line number="17" hits="10" branch="False" />
+            <line number="180" hits="10" branch="False" />
+            <line number="181" hits="10" branch="False" />
+            <line number="182" hits="10" branch="False" />
+            <line number="183" hits="10" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Core.Point" filename="source\repos\Chess\Chess\Models\Core\Point.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -3541,18 +3561,18 @@
             </method>
             <method name=".ctor" signature="(System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="110" branch="False" />
+                <line number="13" hits="270" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="14" hits="1" branch="False" />
-            <line number="13" hits="110" branch="False" />
+            <line number="13" hits="270" branch="False" />
           </lines>
         </class>
       </classes>
     </package>
-    <package name="ChessTest" line-rate="0.9027" branch-rate="0.75" complexity="16">
+    <package name="ChessTest" line-rate="0.7988" branch-rate="0.75" complexity="27">
       <classes>
         <class name="AutoGeneratedProgram" filename=".nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -3566,208 +3586,452 @@
             <line number="4" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="Chess.Models.Figures.Tests.FigureTests" filename="source\repos\Chess\ChessTest\Models\Figures\FigureTests.cs" line-rate="0.9104000000000001" branch-rate="0.75" complexity="14">
+        <class name="Chess.Models.Figures.Tests.FigureTests" filename="source\repos\Chess\ChessTest\Models\Figures\FigureTests.cs" line-rate="0.7768999999999999" branch-rate="0.75" complexity="19">
           <methods>
             <method name="Figure_ConvertRelativePointToAbsolute_ReturnsCorrectPoints" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="18" hits="1" branch="False" />
-                <line number="19" hits="1" branch="False" />
                 <line number="20" hits="1" branch="False" />
                 <line number="21" hits="1" branch="False" />
                 <line number="22" hits="1" branch="False" />
                 <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
                 <line number="25" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
-                <line number="29" hits="6" branch="True" condition-coverage="100% (2/2)">
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="6" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="230" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="30" hits="2" branch="False" />
-                <line number="31" hits="2" branch="False" />
                 <line number="32" hits="2" branch="False" />
                 <line number="33" hits="2" branch="False" />
-                <line number="34" hits="1" branch="False" />
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+                <line number="36" hits="1" branch="False" />
               </lines>
             </method>
             <method name="clearNonSecuritedPointsTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="38" hits="1" branch="False" />
-                <line number="39" hits="1" branch="False" />
-                <line number="40" hits="0" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="42" hits="0" branch="False" />
               </lines>
             </method>
             <method name="getMovePointsWithoutFilteringTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="44" hits="1" branch="False" />
-                <line number="45" hits="1" branch="False" />
-                <line number="46" hits="0" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="47" hits="1" branch="False" />
+                <line number="48" hits="0" branch="False" />
               </lines>
             </method>
             <method name="getMovePointsTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="50" hits="1" branch="False" />
-                <line number="51" hits="1" branch="False" />
-                <line number="52" hits="0" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="0" branch="False" />
               </lines>
             </method>
             <method name="onFigureMovedTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="56" hits="1" branch="False" />
-                <line number="57" hits="1" branch="False" />
                 <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
                 <line number="60" hits="1" branch="False" />
                 <line number="62" hits="1" branch="False" />
                 <line number="64" hits="1" branch="False" />
                 <line number="66" hits="1" branch="False" />
-                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
               </lines>
             </method>
             <method name="pointMovableTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="71" hits="1" branch="False" />
-                <line number="72" hits="1" branch="False" />
-                <line number="73" hits="0" branch="False" />
+                <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="0" branch="False" />
               </lines>
             </method>
             <method name="MoveTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="77" hits="1" branch="False" />
-                <line number="78" hits="1" branch="False" />
-                <line number="79" hits="0" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+                <line number="81" hits="0" branch="False" />
               </lines>
             </method>
             <method name="setPositionTest" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="83" hits="1" branch="False" />
-                <line number="84" hits="1" branch="False" />
                 <line number="85" hits="1" branch="False" />
                 <line number="86" hits="1" branch="False" />
+                <line number="87" hits="1" branch="False" />
                 <line number="88" hits="1" branch="False" />
-                <line number="90" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="90" hits="1" branch="False" />
+                <line number="92" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="62" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="91" hits="1" branch="False" />
+                <line number="93" hits="1" branch="False" />
               </lines>
             </method>
             <method name="FigureTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="95" hits="1" branch="False" />
-                <line number="96" hits="1" branch="False" />
                 <line number="97" hits="1" branch="False" />
                 <line number="98" hits="1" branch="False" />
                 <line number="99" hits="1" branch="False" />
                 <line number="100" hits="1" branch="False" />
                 <line number="101" hits="1" branch="False" />
+                <line number="102" hits="1" branch="False" />
+                <line number="103" hits="1" branch="False" />
               </lines>
             </method>
             <method name="IsPatternMoveValidTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="105" hits="1" branch="False" />
-                <line number="106" hits="1" branch="False" />
-                <line number="107" hits="0" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+                <line number="109" hits="0" branch="False" />
               </lines>
             </method>
             <method name="setAvalibleMovePointsTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="111" hits="1" branch="False" />
-                <line number="112" hits="1" branch="False" />
                 <line number="113" hits="1" branch="False" />
                 <line number="114" hits="1" branch="False" />
+                <line number="115" hits="1" branch="False" />
                 <line number="116" hits="1" branch="False" />
                 <line number="118" hits="1" branch="False" />
-                <line number="119" hits="1" branch="False" />
+                <line number="120" hits="1" branch="False" />
+                <line number="121" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="Bishop_createTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="Bishop_createTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
               <lines>
-                <line number="123" hits="1" branch="False" />
-                <line number="124" hits="1" branch="False" />
                 <line number="125" hits="1" branch="False" />
                 <line number="126" hits="1" branch="False" />
                 <line number="127" hits="1" branch="False" />
-                <line number="128" hits="1" branch="False" />
+                <line number="129" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="131" hits="1" branch="False" />
+                <line number="132" hits="1" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="135" hits="0" branch="False" />
+                <line number="136" hits="0" branch="False" />
+                <line number="137" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Horse_createTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="141" hits="1" branch="False" />
+                <line number="142" hits="1" branch="False" />
+                <line number="143" hits="1" branch="False" />
+                <line number="145" hits="1" branch="False" />
+                <line number="146" hits="1" branch="False" />
+                <line number="147" hits="1" branch="False" />
+                <line number="148" hits="1" branch="False" />
+                <line number="149" hits="0" branch="False" />
+                <line number="150" hits="0" branch="False" />
+                <line number="151" hits="0" branch="False" />
+                <line number="152" hits="0" branch="False" />
+                <line number="153" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Rook_createTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="157" hits="1" branch="False" />
+                <line number="158" hits="1" branch="False" />
+                <line number="159" hits="1" branch="False" />
+                <line number="161" hits="1" branch="False" />
+                <line number="162" hits="1" branch="False" />
+                <line number="163" hits="1" branch="False" />
+                <line number="164" hits="1" branch="False" />
+                <line number="165" hits="0" branch="False" />
+                <line number="166" hits="0" branch="False" />
+                <line number="167" hits="0" branch="False" />
+                <line number="168" hits="0" branch="False" />
+                <line number="169" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Queen_createTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="173" hits="1" branch="False" />
+                <line number="174" hits="1" branch="False" />
+                <line number="175" hits="1" branch="False" />
+                <line number="177" hits="1" branch="False" />
+                <line number="178" hits="1" branch="False" />
+                <line number="179" hits="1" branch="False" />
+                <line number="180" hits="1" branch="False" />
+                <line number="181" hits="0" branch="False" />
+                <line number="182" hits="0" branch="False" />
+                <line number="183" hits="0" branch="False" />
+                <line number="184" hits="0" branch="False" />
+                <line number="185" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="King_createTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="189" hits="1" branch="False" />
+                <line number="190" hits="1" branch="False" />
+                <line number="191" hits="1" branch="False" />
+                <line number="193" hits="1" branch="False" />
+                <line number="194" hits="1" branch="False" />
+                <line number="195" hits="1" branch="False" />
+                <line number="196" hits="1" branch="False" />
+                <line number="197" hits="0" branch="False" />
+                <line number="198" hits="0" branch="False" />
+                <line number="199" hits="0" branch="False" />
+                <line number="200" hits="0" branch="False" />
+                <line number="201" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ProgramTest" signature="()" line-rate="0.6666" branch-rate="1" complexity="1">
+              <lines>
+                <line number="205" hits="1" branch="False" />
+                <line number="207" hits="1" branch="False" />
+                <line number="208" hits="1" branch="False" />
+                <line number="209" hits="0" branch="False" />
+                <line number="210" hits="1" branch="False" />
+                <line number="211" hits="1" branch="False" />
+                <line number="212" hits="1" branch="False" />
+                <line number="213" hits="0" branch="False" />
+                <line number="214" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="1" branch="False" />
-            <line number="19" hits="1" branch="False" />
             <line number="20" hits="1" branch="False" />
             <line number="21" hits="1" branch="False" />
             <line number="22" hits="1" branch="False" />
             <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
             <line number="25" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
-            <line number="29" hits="6" branch="True" condition-coverage="100% (2/2)">
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="6" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="230" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="30" hits="2" branch="False" />
-            <line number="31" hits="2" branch="False" />
             <line number="32" hits="2" branch="False" />
             <line number="33" hits="2" branch="False" />
-            <line number="34" hits="1" branch="False" />
-            <line number="38" hits="1" branch="False" />
-            <line number="39" hits="1" branch="False" />
-            <line number="40" hits="0" branch="False" />
-            <line number="44" hits="1" branch="False" />
-            <line number="45" hits="1" branch="False" />
-            <line number="46" hits="0" branch="False" />
-            <line number="50" hits="1" branch="False" />
-            <line number="51" hits="1" branch="False" />
-            <line number="52" hits="0" branch="False" />
-            <line number="56" hits="1" branch="False" />
-            <line number="57" hits="1" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="42" hits="0" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="47" hits="1" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="0" branch="False" />
             <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
             <line number="60" hits="1" branch="False" />
             <line number="62" hits="1" branch="False" />
             <line number="64" hits="1" branch="False" />
             <line number="66" hits="1" branch="False" />
-            <line number="67" hits="1" branch="False" />
-            <line number="71" hits="1" branch="False" />
-            <line number="72" hits="1" branch="False" />
-            <line number="73" hits="0" branch="False" />
-            <line number="77" hits="1" branch="False" />
-            <line number="78" hits="1" branch="False" />
-            <line number="79" hits="0" branch="False" />
-            <line number="83" hits="1" branch="False" />
-            <line number="84" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="0" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+            <line number="81" hits="0" branch="False" />
             <line number="85" hits="1" branch="False" />
             <line number="86" hits="1" branch="False" />
+            <line number="87" hits="1" branch="False" />
             <line number="88" hits="1" branch="False" />
-            <line number="90" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="90" hits="1" branch="False" />
+            <line number="92" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="62" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="91" hits="1" branch="False" />
-            <line number="95" hits="1" branch="False" />
-            <line number="96" hits="1" branch="False" />
+            <line number="93" hits="1" branch="False" />
             <line number="97" hits="1" branch="False" />
             <line number="98" hits="1" branch="False" />
             <line number="99" hits="1" branch="False" />
             <line number="100" hits="1" branch="False" />
             <line number="101" hits="1" branch="False" />
-            <line number="105" hits="1" branch="False" />
-            <line number="106" hits="1" branch="False" />
-            <line number="107" hits="0" branch="False" />
-            <line number="111" hits="1" branch="False" />
-            <line number="112" hits="1" branch="False" />
+            <line number="102" hits="1" branch="False" />
+            <line number="103" hits="1" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+            <line number="109" hits="0" branch="False" />
             <line number="113" hits="1" branch="False" />
             <line number="114" hits="1" branch="False" />
+            <line number="115" hits="1" branch="False" />
             <line number="116" hits="1" branch="False" />
             <line number="118" hits="1" branch="False" />
-            <line number="119" hits="1" branch="False" />
-            <line number="123" hits="1" branch="False" />
-            <line number="124" hits="1" branch="False" />
+            <line number="120" hits="1" branch="False" />
+            <line number="121" hits="1" branch="False" />
             <line number="125" hits="1" branch="False" />
             <line number="126" hits="1" branch="False" />
             <line number="127" hits="1" branch="False" />
-            <line number="128" hits="1" branch="False" />
+            <line number="129" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="131" hits="1" branch="False" />
+            <line number="132" hits="1" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="135" hits="0" branch="False" />
+            <line number="136" hits="0" branch="False" />
+            <line number="137" hits="1" branch="False" />
+            <line number="141" hits="1" branch="False" />
+            <line number="142" hits="1" branch="False" />
+            <line number="143" hits="1" branch="False" />
+            <line number="145" hits="1" branch="False" />
+            <line number="146" hits="1" branch="False" />
+            <line number="147" hits="1" branch="False" />
+            <line number="148" hits="1" branch="False" />
+            <line number="149" hits="0" branch="False" />
+            <line number="150" hits="0" branch="False" />
+            <line number="151" hits="0" branch="False" />
+            <line number="152" hits="0" branch="False" />
+            <line number="153" hits="1" branch="False" />
+            <line number="157" hits="1" branch="False" />
+            <line number="158" hits="1" branch="False" />
+            <line number="159" hits="1" branch="False" />
+            <line number="161" hits="1" branch="False" />
+            <line number="162" hits="1" branch="False" />
+            <line number="163" hits="1" branch="False" />
+            <line number="164" hits="1" branch="False" />
+            <line number="165" hits="0" branch="False" />
+            <line number="166" hits="0" branch="False" />
+            <line number="167" hits="0" branch="False" />
+            <line number="168" hits="0" branch="False" />
+            <line number="169" hits="1" branch="False" />
+            <line number="173" hits="1" branch="False" />
+            <line number="174" hits="1" branch="False" />
+            <line number="175" hits="1" branch="False" />
+            <line number="177" hits="1" branch="False" />
+            <line number="178" hits="1" branch="False" />
+            <line number="179" hits="1" branch="False" />
+            <line number="180" hits="1" branch="False" />
+            <line number="181" hits="0" branch="False" />
+            <line number="182" hits="0" branch="False" />
+            <line number="183" hits="0" branch="False" />
+            <line number="184" hits="0" branch="False" />
+            <line number="185" hits="1" branch="False" />
+            <line number="189" hits="1" branch="False" />
+            <line number="190" hits="1" branch="False" />
+            <line number="191" hits="1" branch="False" />
+            <line number="193" hits="1" branch="False" />
+            <line number="194" hits="1" branch="False" />
+            <line number="195" hits="1" branch="False" />
+            <line number="196" hits="1" branch="False" />
+            <line number="197" hits="0" branch="False" />
+            <line number="198" hits="0" branch="False" />
+            <line number="199" hits="0" branch="False" />
+            <line number="200" hits="0" branch="False" />
+            <line number="201" hits="1" branch="False" />
+            <line number="205" hits="1" branch="False" />
+            <line number="207" hits="1" branch="False" />
+            <line number="208" hits="1" branch="False" />
+            <line number="209" hits="0" branch="False" />
+            <line number="210" hits="1" branch="False" />
+            <line number="211" hits="1" branch="False" />
+            <line number="212" hits="1" branch="False" />
+            <line number="213" hits="0" branch="False" />
+            <line number="214" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="Chess.Models.Figures.Tests.ToolsTests" filename="source\repos\Chess\ChessTest\Models\Tools\ToolsTests.cs" line-rate="0.8823000000000001" branch-rate="1" complexity="6">
+          <methods>
+            <method name="pointAxisValid_returnFalse_Test" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="pointAxisValid_null_returnFalse_Test" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="pointAxisValid_returnTrue_Test" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="DeepCloneHelper_returnTrue_Test" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="1" branch="False" />
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="DeepCloneHelper_returnFalse_Test" signature="()" line-rate="0.8" branch-rate="1" complexity="1">
+              <lines>
+                <line number="42" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="DeepCloneHelper_notSerializible_returnFalse_Test" signature="()" line-rate="0.8" branch-rate="1" complexity="1">
+              <lines>
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Chess.Models.Core.Tests.PointTests" filename="source\repos\Chess\ChessTest\Models\Core\PointTests.cs" line-rate="1" branch-rate="1" complexity="1">
