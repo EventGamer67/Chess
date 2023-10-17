@@ -156,14 +156,6 @@ namespace Chess.Models.Figures
             AvaliblePoints = getMovePoints();
             return AvaliblePoints.Any(pnt => pnt.x == point.x && pnt.y == point.y);
         }
-        public void Move(Point newPosition, Board board)
-        {
-            if (!board.isSlotEmpty(newPosition))
-            {
-                board.removeFigureAt(newPosition);
-            }
-            else { position = newPosition; }
-        }
         public void setPosition(Point newPoint) => position = newPoint;
         public Figure(Point point, string color, Board board)
         {

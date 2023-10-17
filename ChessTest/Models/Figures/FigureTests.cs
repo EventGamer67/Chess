@@ -36,21 +36,44 @@ namespace Chess.Models.Figures.Tests
         }
 
         [TestMethod()]
-        public void clearNonSecuritedPointsTest()
+        public void figureCanMove_Test()
         {
-            Assert.Fail();
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(0,1));
+            Assert.IsTrue(figure.figureCanMove());
+        }
+        [TestMethod()]
+        public void figureCanMove_returnFalse_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Pawn(new Point(1, 8), "Blue", board, new Point(0, 1));
+            Assert.IsFalse(figure.figureCanMove());
         }
 
         [TestMethod()]
-        public void getMovePointsWithoutFilteringTest()
+        public void getMovePoints_Test()
         {
-            Assert.Fail();
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Queen(new Point(2, 2), "Blue", board);
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(2, 4));
+            Assert.IsNotNull(figure.getMovePoints());
         }
 
         [TestMethod()]
-        public void getMovePointsTest()
+        public void getMovePoints_2_Test()
         {
-            Assert.Fail();
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Horse(new Point(2, 2), "Purple", board);
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(3, 4));
+            Assert.IsNotNull(figure.getMovePoints());
         }
 
         [TestMethod()]
@@ -66,18 +89,6 @@ namespace Chess.Models.Figures.Tests
             board.MoveFigure(figure, new Point(figure.position.x, figure.position.y + 1));
 
             Assert.IsTrue(moveCountBefore < figure.MoveCount);
-        }
-
-        [TestMethod()]
-        public void pointMovableTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void MoveTest()
-        {
-            Assert.Fail();
         }
 
         [TestMethod()]
@@ -103,9 +114,23 @@ namespace Chess.Models.Figures.Tests
         }
 
         [TestMethod()]
-        public void IsPatternMoveValidTest()
+        public void IsPatternMoveValid_Test()
         {
-            Assert.Fail();
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(1, 0));
+
+            Assert.IsTrue(figure.IsPatternMoveValid(new Point(0,2)));
+        }
+
+        [TestMethod()]
+        public void IsPatternMoveValid_returnFalse_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(0, 1));
+
+            Assert.IsTrue(figure.IsPatternMoveValid(new Point(0, 3)));
         }
 
         [TestMethod()]
@@ -117,7 +142,54 @@ namespace Chess.Models.Figures.Tests
 
             figure.setAvalibleMovePoints(); 
 
-            Assert.IsNotNull(figure.getMovePoints);
+            Assert.IsNotNull(figure.getMovePoints());
+        }
+
+        [TestMethod()]
+        public void getMovePointsWithoutFiltering_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(1, 0));
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(2, 4));
+            Assert.IsNotNull(figure.getMovePointsWithoutFiltering());
+        }
+
+        [TestMethod()]
+        public void getMovePointsWithoutFiltering_2_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Queen(new Point(2, 2), "Blue", board);
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(2, 4));
+            Assert.IsNotNull(figure.getMovePointsWithoutFiltering());
+        }
+        [TestMethod()]
+        public void getMovePointsWithoutFiltering_3_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Queen(new Point(2, 2), "Purple", board);
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(2, 4));
+            Assert.IsNotNull(figure.getMovePointsWithoutFiltering());
+        }
+
+        [TestMethod()]
+        public void getMovePointsWithoutFiltering_4_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new Horse(new Point(2, 2), "Purple", board);
+            var figureKing = new King(new Point(2, 2), "Purple", board);
+            board.setFigure(figure, new Point(2, 2));
+            board.setFigure(figureKing, new Point(3, 4));
+            Assert.IsNotNull(figure.getMovePointsWithoutFiltering());
         }
 
         [TestMethod()]

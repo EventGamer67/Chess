@@ -18,7 +18,6 @@ namespace Chess.Models.Core
         protected List<Figure> figures;
         public Game game;
         public bool isFutureBoard;
-
         public Board(int width, int height, Game game, bool isFutureBoard)
         {
             this.width = width;
@@ -27,18 +26,11 @@ namespace Chess.Models.Core
             figures = new List<Figure>();
             this.isFutureBoard = isFutureBoard;
         }
-
         public void DisplayFigureMoves(Figure figure)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             List<Point> movePoints = figure.getMovePoints();
-
-            //foreach(Point point in movePoints)
-            //{
-            //    Console.WriteLine(point.getAsString());
-
-            //}
 
             Console.Write("  ");
             for (int x = 1; x <= width; x++)
@@ -77,16 +69,12 @@ namespace Chess.Models.Core
                             }
                             else
                             {
-                                //Console.ForegroundColor = figureAtPoint.colorColor;
-                                
                                 Console.ForegroundColor = ConsoleColor.Yellow;
                             }
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
-                        }
-                        {
                         }
                         Console.Write($"[{symbolToDisplay}]");
                         Console.ForegroundColor = ConsoleColor.White;
