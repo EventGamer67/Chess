@@ -14,7 +14,6 @@ namespace Chess.Models.Figures.Tests
     [TestClass()]
     public class FigureTests
     {
-
         [TestMethod]
         public void Figure_ConvertRelativePointToAbsolute_ReturnsCorrectPoints()
         {
@@ -34,13 +33,13 @@ namespace Chess.Models.Figures.Tests
                 Assert.AreEqual(expectedAbsolutePoints[i].y, absolutePoints[i].y);
             }
         }
-
         [TestMethod()]
         public void figureCanMove_Test()
         {
             var game = new Game();
             var board = new Board(8, 8, game, false);
             var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(0,1));
+            board.setFigure(figure, new Point(2, 2));
             Assert.IsTrue(figure.figureCanMove());
         }
         [TestMethod()]
@@ -119,8 +118,8 @@ namespace Chess.Models.Figures.Tests
             var game = new Game();
             var board = new Board(8, 8, game, false);
             var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(1, 0));
-
-            Assert.IsTrue(figure.IsPatternMoveValid(new Point(0,2)));
+            board.setFigure(figure, new Point(2, 2));
+            Assert.IsFalse(figure.IsPatternMoveValid(new Point(0,2)));
         }
 
         [TestMethod()]
@@ -129,8 +128,8 @@ namespace Chess.Models.Figures.Tests
             var game = new Game();
             var board = new Board(8, 8, game, false);
             var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(0, 1));
-
-            Assert.IsTrue(figure.IsPatternMoveValid(new Point(0, 3)));
+            board.setFigure(figure, new Point(2, 2));
+            Assert.IsFalse(figure.IsPatternMoveValid(new Point(0, 3)));
         }
 
         [TestMethod()]
@@ -140,8 +139,8 @@ namespace Chess.Models.Figures.Tests
             var board = new Board(8, 8, game, false);
             var figure = new Pawn(new Point(2, 2), "Blue", board, new Point(1,0));
 
-            figure.setAvalibleMovePoints(); 
-
+            figure.setAvalibleMovePoints();
+            board.setFigure(figure, new Point(2, 2));
             Assert.IsNotNull(figure.getMovePoints());
         }
 
@@ -270,6 +269,296 @@ namespace Chess.Models.Figures.Tests
             {
                 Assert.Fail();
             }
+        }
+        [TestMethod()]
+        public void King_RookSwap_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new King(new Point(4, 1), "Blue", board);
+            var Rook1 = new Rook(new Point(1, 1), "Blue", board);
+            var Rook2 = new Rook(new Point(8, 1), "Blue", board);
+            var pawn = new Pawn(new Point(8, 1), "Blue", board, new Point(0,1));
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Rook1, new Point(1, 1));
+            board.setFigure(Rook2, new Point(8, 1));
+            board.setFigure(pawn, new Point(2, 1));
+
+            board.DisplayFigureMoves(figure);
+
+        }
+        [TestMethod()]
+        public void King_RookSwap_overlapped_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new King(new Point(4, 1), "Blue", board);
+            var Rook1 = new Rook(new Point(1, 1), "Blue", board);
+            var Rook2 = new Rook(new Point(8, 1), "Blue", board);
+            var pawn = new Pawn(new Point(8, 1), "Blue", board, new Point(0, 1));
+            var pawn2 = new Pawn(new Point(8, 1), "Blue", board, new Point(0, 1));
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Rook1, new Point(1, 1));
+            board.setFigure(Rook2, new Point(8, 1));
+            board.setFigure(pawn, new Point(3, 1));
+            board.setFigure(pawn2, new Point(6, 1));
+
+            board.DisplayFigureMoves(figure);
+
+        }
+        [TestMethod()]
+        public void King_RookSwap_can_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            var figure = new King(new Point(4, 1), "Blue", board);
+            var Rook1 = new Rook(new Point(1, 1), "Blue", board);
+            var Rook2 = new Rook(new Point(8, 1), "Blue", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Rook1, new Point(1, 1));
+            board.setFigure(Rook2, new Point(8, 1));
+
+            board.DisplayFigureMoves(figure);
+
+        }
+        [TestMethod()]
+        public void King_RookSwap_can_teams_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new King(new Point(4, 1), "Blue", board);
+            var Rook1 = new Rook(new Point(1, 1), "Blue", board);
+            var Rook2 = new Rook(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Rook1, new Point(1, 1));
+            board.setFigure(Rook2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(3, 3));
+
+            board.DisplayFigureMoves(figure);
+
+        }
+        [TestMethod()]
+        public void King_RookSwap_can_noRooks_teams_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new King(new Point(4, 1), "Blue", board);
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(1, 1));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(3, 3));
+
+            board.DisplayFigureMoves(figure);
+
+        }
+        [TestMethod()]
+        public void Pawn_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0,1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(1, 1));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(3, 3));
+            board.MoveFigure(figure, new Point(4,2));
+        }
+        [TestMethod()]
+        public void Pawn_kill_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(1, 1));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 2));
+            board.MoveFigure(figure, new Point(4, 2));
+        }
+        [TestMethod()]
+        public void Pawn_kill_back_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(1, 1));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 1));
+            board.MoveFigure(figure, new Point(4, 2));
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(1, 1));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 1));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_doublemove_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(4, 2));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 1));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_doublemove2_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(4, 3));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 1));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_doublemove3_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, -1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Blue", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Blue", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(4, 3));
+            board.setFigure(Bishop2, new Point(8, 1));
+            board.setFigure(Quenn, new Point(4, 1));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_kill_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Purple", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Purple", board);
+            var Quenn = new Queen(new Point(1, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 1));
+            board.setFigure(Bishop1, new Point(5, 2));
+            board.setFigure(Bishop2, new Point(3, 2));
+            board.setFigure(Quenn, new Point(7, 7));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_kill_proxod_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Purple", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 2));
+            board.setFigure(Bishop1, new Point(5, 2));
+            board.setFigure(Bishop2, new Point(3, 2));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void Pawn_getMovePoints_kill_proxod_down_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, -1));
+            var Bishop1 = new Bishop(new Point(1, 1), "Purple", board);
+            var Bishop2 = new Bishop(new Point(8, 1), "Purple", board);
+
+            board.setFigure(figure, new Point(4, 2));
+            board.setFigure(Bishop1, new Point(5, 2));
+            board.setFigure(Bishop2, new Point(3, 2));
+            figure.getMovePoints();
+        }
+        [TestMethod()]
+        public void mutatePawn_Test()
+        {
+            var game = new Game();
+            var board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+            var figure = new Pawn(new Point(4, 1), "Blue", board, new Point(0, 1));
+
+            board.setFigure(figure, new Point(2, 7));
+            figure.mutatePawn(1);
+            figure.mutatePawn(2);
+            figure.mutatePawn(3);
+            figure.mutatePawn(4);
+            figure.mutatePawn(5);
+            figure.mutatePawn(6);
+            figure.mutatePawn(-1);
         }
     }
 }

@@ -36,22 +36,7 @@ namespace Chess.Models.Figures
             foreach (Move move in moveSet.moves)
             {
                 List<Point> points = ConvertRelativePointToAbsolute(move.getMovePoints());
-
-                if (move.requireEnemyChecking)
-                {
-                    foreach (Point point in points)
-                    {
-                        res.Add(point);
-                        if (!board.isSlotEmpty(point))
-                        {
-                            break;
-                        }
-                    }
-                }
-                else
-                {
-                    res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
-                }
+                res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
             }
             return res;
         }
@@ -122,34 +107,20 @@ namespace Chess.Models.Figures
             {
                 List<Point> points = ConvertRelativePointToAbsolute(move.getMovePoints());
 
-                if (move.requireEnemyChecking)
+                res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
+                List<Point> clearPoints = new List<Point>();
+                foreach (Point point in res)
                 {
-                    foreach (Point point in points)
+                    if (!board.isSlotEmpty(point))
                     {
-                        res.Add(point);
-                        if (!board.isSlotEmpty(point))
+                        Figure figure = board.GetFigureAtPoint(point);
+                        if (!board.FiguresIsEnemies(figure, this))
                         {
-                            break;
+                            clearPoints.Add(point);
                         }
                     }
                 }
-                else
-                {
-                    res.AddRange(ConvertRelativePointToAbsolute(move.getMovePoints()));
-                    List<Point> clearPoints = new List<Point>();
-                    foreach (Point point in res)
-                    {
-                        if (!board.isSlotEmpty(point))
-                        {
-                            Figure figure = board.GetFigureAtPoint(point);
-                            if (!board.FiguresIsEnemies(figure, this))
-                            {
-                                clearPoints.Add(point);
-                            }
-                        }
-                    }
-                    res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
-                }
+                res.RemoveAll(point => clearPoints.Any(clearPoints => point.x == clearPoints.x && point.y == clearPoints.y));
             }
             //rokirovka
             if (this.RookSwapAvalible().leftRook == true)

@@ -174,39 +174,35 @@ namespace Chess.Models.Core
         }
         private char GetSymbolForFigure(Figure figure)
         {
-            if (figure != null)
+            char symbolToDisplay;
+            switch (figure.name)
             {
-                char symbolToDisplay;
-                switch (figure.name)
-                {
-                    case "Base figure":
-                        symbolToDisplay = 'A';
-                        break;
-                    case "Horse":
-                        symbolToDisplay = 'H';
-                        break;
-                    case "Rook":
-                        symbolToDisplay = 'R';
-                        break;
-                    case "Bishop":
-                        symbolToDisplay = 'B';
-                        break;
-                    case "Queen":
-                        symbolToDisplay = 'Q';
-                        break;
-                    case "Pawn":
-                        symbolToDisplay = 'P';
-                        break;
-                    case "King":
-                        symbolToDisplay = 'K';
-                        break;
-                    default:
-                        symbolToDisplay = ' ';
-                        break;
-                }
-                return symbolToDisplay;
+                case "Base figure":
+                    symbolToDisplay = 'A';
+                    break;
+                case "Horse":
+                    symbolToDisplay = 'H';
+                    break;
+                case "Rook":
+                    symbolToDisplay = 'R';
+                    break;
+                case "Bishop":
+                    symbolToDisplay = 'B';
+                    break;
+                case "Queen":
+                    symbolToDisplay = 'Q';
+                    break;
+                case "Pawn":
+                    symbolToDisplay = 'P';
+                    break;
+                case "King":
+                    symbolToDisplay = 'K';
+                    break;
+                default:
+                    symbolToDisplay = ' ';
+                    break;
             }
-            else { return ' '; }
+            return symbolToDisplay;
         }
         public bool isSlotEmpty(Point point) => !figures.Any(figure => figure.position.x == point.x && figure.position.y == point.y);
         public string FigureCanMoveToPoint(Figure figure, Point point)

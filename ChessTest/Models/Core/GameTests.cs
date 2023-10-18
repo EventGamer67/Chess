@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Chess.Models.Figures;
 using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
+using System.Net.Http.Headers;
 
 namespace Chess.Models.Core.Tests
 {
@@ -49,6 +50,28 @@ namespace Chess.Models.Core.Tests
         {
             Game game = new Game();
             Board board = new Board(8, 8, game, false);
+            var figureQueen = new King(new Point(2, 2), "Purple", board);
+            var figureQueen2 = new Queen(new Point(6, 5), "Purple", board);
+            var figureKing = new Queen(new Point(5, 5), "Blue", board);
+            board.setFigure(figureQueen, new Point(2, 2));
+            board.setFigure(figureKing, new Point(5, 5));
+            board.setFigure(figureQueen2, new Point(6, 5));
+            try
+            {
+                board.DisplayBoard();
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }
+        [TestMethod()]
+        public void DisplayBoardWithFiguresWithOverlapped_King_Test()
+        {
+            Game game = new Game();
+            Board board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
             var figureQueen = new King(new Point(2, 2), "Purple", board);
             var figureQueen2 = new Queen(new Point(6, 5), "Purple", board);
             var figureKing = new Queen(new Point(5, 5), "Blue", board);
@@ -114,6 +137,19 @@ namespace Chess.Models.Core.Tests
             var figureQueen = new King(new Point(2, 2), "Purple", board);
             var figureQueen2 = new Queen(new Point(6, 5), "Purple", board);
             var figureQueen3 = new Queen(new Point(6, 5), "Blue", board);
+            board.GetFiguresAsString("Blue");
+        }
+        [TestMethod()]
+        public void GetFiguresAsString_filter_Test()
+        {
+            Game game = new Game();
+            Board board = new Board(8, 8, game, false);
+            var figureQueen = new King(new Point(2, 2), "Purple", board);
+            var figureQueen2 = new Queen(new Point(6, 5), "Purple", board);
+            var figureQueen3 = new Queen(new Point(6, 5), "Blue", board);
+            board.setFigure(figureQueen, new Point(2, 2));
+            board.setFigure(figureQueen2, new Point(6, 5));
+            board.setFigure(figureQueen3, new Point(6, 6));
             board.GetFiguresAsString("Blue");
         }
         [TestMethod()]
@@ -216,7 +252,6 @@ namespace Chess.Models.Core.Tests
             board.setFigure(figureQueen4, new Point(5,3));
             Assert.IsTrue(board.IsMyKingSaveable(board, "Purple"));
         }
-
         [TestMethod()]
         public void MoveFigure_Test()
         {
@@ -346,6 +381,7 @@ namespace Chess.Models.Core.Tests
             
             board.IsMyKingAttacked(board,"Purple");
         }
+        [TestMethod()]
         public void IsMyKingAttacked_returnTrue_Test()
         {
             Game game = new Game();
@@ -358,6 +394,62 @@ namespace Chess.Models.Core.Tests
             board.setFigure(figureQueenBlue, new Point(7, 7));
 
             Assert.IsTrue(board.IsMyKingAttacked(board, "Purple"));
+        }
+        [TestMethod()]
+        public void GetSymbolForFigure_Test()
+        {
+            Game game = new Game();
+            Board board = new Board(8, 8, game, false);
+            game.Players.Add("Purple");
+            game.Players.Add("Blue");
+
+            board.setFigure(new Horse(new Point(0, 0), "Purple", board), new Point(2, 1));
+            board.setFigure(new Horse(new Point(0, 0), "Purple", board), new Point(7, 1));
+
+            board.setFigure(new Rook(new Point(0, 0), "Purple", board), new Point(1, 1));
+            board.setFigure(new Rook(new Point(0, 0), "Purple", board), new Point(8, 1));
+
+            board.setFigure(new Bishop(new Point(0, 0), "Purple", board), new Point(6, 1));
+            board.setFigure(new Bishop(new Point(0, 0), "Purple", board), new Point(3, 1));
+
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(1, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(2, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(3, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(4, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(5, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(6, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(7, 2));
+            board.setFigure(new Pawn(new Point(0, 0), "Purple", board, new Point(0, 1)), new Point(8, 2));
+
+            board.setFigure(new Queen(new Point(0, 0), "Blue", board), new Point(4, 8));
+            board.setFigure(new Queen(new Point(0, 0), "Purple", board), new Point(5, 1));
+
+
+            board.setFigure(new Horse(new Point(0, 0), "Blue", board), new Point(2, 8));
+            board.setFigure(new Horse(new Point(0, 0), "Blue", board), new Point(7, 8));
+
+            board.setFigure(new Rook(new Point(0, 0), "Blue", board), new Point(1, 8));
+            board.setFigure(new Rook(new Point(0, 0), "Blue", board), new Point(8, 8));
+
+            board.setFigure(new Bishop(new Point(0, 0), "Blue", board), new Point(6, 8));
+            board.setFigure(new Bishop(new Point(0, 0), "Blue", board), new Point(3, 8));
+
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(1, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(2, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(3, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(4, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(5, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(6, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(7, 7));
+            board.setFigure(new Pawn(new Point(0, 0), "Blue", board, new Point(0, -1)), new Point(8, 7));
+
+            board.setFigure(new King(new Point(0, 0), "Blue", board), new Point(5, 8));
+            board.setFigure(new King(new Point(0, 0), "Purple", board), new Point(4, 1));
+            var pawn = new Pawn(new Point(2, 2), "Purple", board, new Point(0, 1));
+            pawn.name = "";
+            board.setFigure(pawn, new Point(5, 5));
+
+            board.DisplayBoard();
         }
     }
 }

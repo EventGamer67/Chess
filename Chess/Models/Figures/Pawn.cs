@@ -26,7 +26,6 @@ namespace Chess.Models.Figures
 
             this.setAvalibleMovePoints();
         }
-        //тестово сделать без проверок на предыдущую позицию
         public override void onFigureMoved()
         {
             base.onFigureMoved();
@@ -49,14 +48,11 @@ namespace Chess.Models.Figures
             
             if (!this.board.isFutureBoard)
             {
-                //check pawn transform
-                // refactor to team systems
                 if (color == "Purple")
                 {
                     if (position.y == 8)
                     {
                         transformPawn();
-
                     }
                 }
                 else if (color == "Blue")
@@ -68,7 +64,39 @@ namespace Chess.Models.Figures
                 }
             }
         }
-
+        public void mutatePawn(int To)
+        {
+            if (To > 0 && To < 5)
+            {
+                switch (To)
+                {
+                    case 1:
+                        {
+                            board.removeFigure(this);
+                            board.setFigure(new Queen(position, this.color, board), position);
+                            break;
+                        }
+                    case 2:
+                        {
+                            board.removeFigure(this);
+                            board.setFigure(new Rook(position, this.color, board), position);
+                            break;
+                        }
+                    case 3:
+                        {
+                            board.removeFigure(this);
+                            board.setFigure(new Bishop(position, this.color, board), position);
+                            break;
+                        }
+                    case 4:
+                        {
+                            board.removeFigure(this);
+                            board.setFigure(new Horse(position, this.color, board), position);
+                            break;
+                        }
+                }
+            }
+        }
         private void transformPawn()
         {
             Console.WriteLine("Choose transform");
@@ -82,35 +110,8 @@ namespace Chess.Models.Figures
                 string input = Console.ReadLine();
                 if (Tools.Tools.pointAxisValid(input))
                 {
-                    if (Convert.ToInt32(input) > 0 && Convert.ToInt32(input) < 5)
-                    {
-                        switch (Convert.ToInt32(input))
-                        {
-                            case 1: {
-                                    board.removeFigure(this);
-                                    board.setFigure(new Queen(position, this.color, board), position);
-                                    break; 
-                                }
-                            case 2: {
-                                    board.removeFigure(this);
-                                    board.setFigure(new Rook(position, this.color, board), position);
-                                    break; 
-                                }
-                            case 3: {
-                                    board.removeFigure(this);
-                                    board.setFigure(new Bishop(position, this.color, board), position);
-                                    break; 
-                                }
-                            case 4: {
-                                    board.removeFigure(this);
-                                    board.setFigure(new Horse(position, this.color, board), position);
-                                    break; 
-                                }
-                            default: continue;
-                        }
-                        break;
-                    }
-                    continue;
+                    mutatePawn(Convert.ToInt32(input));
+                    //break;
                 }
                 else
                 {
@@ -118,7 +119,6 @@ namespace Chess.Models.Figures
                 }
             }
         }
-
         public override List<Point> getMovePoints()
         {
             Move move = moveSet.moves[0];
@@ -139,7 +139,7 @@ namespace Chess.Models.Figures
                     }
                 }
             }
-            Point comparer = new Point(0,0);
+            Point comparer = new Point(0, 0);
             Point comparer2 = new Point(0, 0);
 
             if (movePoint.y == 1)
@@ -217,10 +217,8 @@ namespace Chess.Models.Figures
                     }
                 }
             }
-
             res = board.clearNonValid(res);
             List<Point> filtered = this.clearNonSecuritedPoints(res);
-
             return filtered;
         }
     }
