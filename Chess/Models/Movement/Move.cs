@@ -25,7 +25,8 @@ namespace Chess.Models.Movement
             {
                 if (!board.isSlotEmpty(point))
                 {
-                    return false;
+                    return true;
+
                 }
             }
             return true;
